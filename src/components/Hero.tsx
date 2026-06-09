@@ -120,7 +120,7 @@ export default function Hero({ onNavClick }: HeroProps) {
           </button>
           <a
             id="hero-btn-cv"
-            href="/porfolio/CV_Juan_Moreno_Trezza.pdf"
+            href="/porfolio/CV_Juan_Moreno_Trezza_.pdf"
             download="CV_Juan_Moreno_Trezza.pdf"
             target="_blank"
             rel="noopener noreferrer"

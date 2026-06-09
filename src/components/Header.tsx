@@ -76,7 +76,7 @@ export default function Header({ activeSection, onNavClick }: HeaderProps) {
         <div className="hidden lg:block">
           <a
             id="download-cv-btn-desktop"
-            href="/porfolio/CV_Juan_Moreno_Trezza.pdf"
+            href="/porfolio/CV_Juan_Moreno_Trezza_.pdf"
             download="CV_Juan_Moreno_Trezza.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -125,7 +125,7 @@ export default function Header({ activeSection, onNavClick }: HeaderProps) {
           </div>
           <a
             id="download-cv-btn-mobile"
-            href="/porfolio/CV_Juan_Moreno_Trezza.pdf"
+            href="/porfolio/CV_Juan_Moreno_Trezza_.pdf"
             download="CV_Juan_Moreno_Trezza.pdf"
             target="_blank"
             rel="noopener noreferrer"
