@@ -5,6 +5,7 @@ import {defineConfig} from 'vite';
 export default defineConfig(() => {
   return {
     base: '/porfolio/',
+    publicDir: 'public',
     plugins: [react()],
     resolve: {
       alias: {
