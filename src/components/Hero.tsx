@@ -120,7 +120,8 @@ export default function Hero({ onNavClick }: HeroProps) {
           </button>
           <a
             id="hero-btn-cv"
-            href="https://drive.google.com/uc?export=download&id=1mXLa2QvmiGJVR7wJZOzDBfmkON1qPMbJ"
+            href="/porfolio/CV_Juan_Moreno_Trezza.pdf"
+            download="CV_Juan_Moreno_Trezza.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-[#393841] hover:border-white text-white hover:bg-white/5 font-semibold text-sm tracking-wide transition-all duration-300 w-full sm:w-auto cursor-pointer"
