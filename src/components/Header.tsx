@@ -27,11 +27,6 @@ export default function Header({ activeSection, onNavClick }: HeaderProps) {
     { id: 'contact', label: 'Contacto' },
   ];
 
-  const handleDownloadCV = () => {
-    // Generate a simple simulated CV file or open in tab
-    alert("Simulando descarga de Currículum Vitae (CV) de Juan Moreno Trezza.");
-  };
-
   return (
     <header
       id="main-nav-header"
@@ -79,14 +74,16 @@ export default function Header({ activeSection, onNavClick }: HeaderProps) {
 
         {/* Right Action: Download CV */}
         <div className="hidden lg:block">
-          <button
+          <a
             id="download-cv-btn-desktop"
-            onClick={handleDownloadCV}
+            href="https://drive.google.com/file/d/1mXLa2QvmiGJVR7wJZOzDBfmkON1qPMbJ/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2 rounded-lg bg-[#8083ff] hover:bg-[#c0c1ff] text-[#0d0096] hover:text-[#1000a9] font-medium text-xs tracking-wider uppercase transition-all duration-300 shadow-md shadow-[#8083ff]/20 hover:scale-[1.03]"
           >
             <ArrowDownToLine size={14} />
             Descargar CV
-          </button>
+          </a>
         </div>
 
         {/* Mobile Toggle Button */}
@@ -125,17 +122,17 @@ export default function Header({ activeSection, onNavClick }: HeaderProps) {
               </button>
             ))}
           </div>
-          <button
+          <a
             id="download-cv-btn-mobile"
-            onClick={() => {
-              handleDownloadCV();
-              setIsMobileMenuOpen(false);
-            }}
+            href="https://drive.google.com/file/d/1mXLa2QvmiGJVR7wJZOzDBfmkON1qPMbJ/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setIsMobileMenuOpen(false)}
             className="flex items-center justify-center gap-2 w-full py-3.5 rounded-lg bg-[#8083ff] text-[#0d0096] font-semibold text-sm transition-all shadow-md active:scale-95"
           >
             <ArrowDownToLine size={16} />
             Descargar CV
-          </button>
+          </a>
         </div>
       )}
     </header>
