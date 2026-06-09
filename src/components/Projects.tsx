@@ -265,22 +265,30 @@ export default function Projects() {
 
                   {/* Action buttons footer */}
                   <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-white/5">
-                    <button
-                      id="modal-btn-demo"
-                      onClick={() => alert(`Iniciando demo simulada para ${selectedProject.title}`)}
-                      className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#8083ff] to-[#c0c1ff] text-[#1000a9] font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:scale-[1.02]"
-                    >
-                      <Globe2 size={14} />
-                      Ver Demo Online
-                    </button>
-                    <button
-                      id="modal-btn-code"
-                      onClick={() => alert(`Abriendo repositorio simulado del código de ${selectedProject.title}`)}
-                      className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2.5 rounded-lg border border-[#393841] hover:border-white text-white hover:bg-white/5 font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:scale-[1.02]"
-                    >
-                      <Code size={14} />
-                      Ver Código Fuente
-                    </button>
+                    {selectedProject.demoUrl && (
+                      <a
+                        id="modal-btn-demo"
+                        href={selectedProject.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#8083ff] to-[#c0c1ff] text-[#1000a9] font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:scale-[1.02]"
+                      >
+                        <Globe2 size={14} />
+                        Ver Demo Online
+                      </a>
+                    )}
+                    {selectedProject.repoUrl && (
+                      <a
+                        id="modal-btn-code"
+                        href={selectedProject.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-2.5 rounded-lg border border-[#393841] hover:border-white text-white hover:bg-white/5 font-semibold text-xs tracking-wider uppercase transition-all duration-300 hover:scale-[1.02]"
+                      >
+                        <Code size={14} />
+                        Ver Código Fuente
+                      </a>
+                    )}
                   </div>
 
                 </div>

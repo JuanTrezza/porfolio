@@ -9,6 +9,8 @@ export interface Project {
   metrics?: string;
   challenges?: string;
   techs: string[];
+  demoUrl?: string;
+  repoUrl?: string;
 }
 
 export interface SkillItem {

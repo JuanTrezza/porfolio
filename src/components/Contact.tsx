@@ -99,10 +99,10 @@ export default function Contact() {
                     Escríbeme a
                   </span>
                   <a
-                    href="mailto:juan.moreno.trezza@gmail.com"
+                    href="mailto:jgmorenotrezza@gmail.com"
                     className="text-white hover:text-[#c0c1ff] text-xs sm:text-sm font-semibold tracking-wide transition-colors"
                   >
-                    juan.moreno.trezza@gmail.com
+                    jgmorenotrezza@gmail.com
                   </a>
                 </div>
               </div>

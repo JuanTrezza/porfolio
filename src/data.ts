@@ -11,7 +11,9 @@ export const projectsData: Project[] = [
     icon: 'ShoppingBag',
     metrics: 'Aumento de conversión simulada del 25% gracias a una UX depurada.',
     challenges: 'El reto principal fue sincronizar las transiciones de estado de la tarjeta de crédito virtual con el scroll interactivo del formulario de checkout.',
-    techs: ['React', 'Framer Motion', 'Tailwind CSS', 'Figma', 'LocalState']
+    techs: ['React', 'Framer Motion', 'Tailwind CSS', 'Figma', 'LocalState'],
+    demoUrl: 'https://juantrezza.github.io/voidwear',
+    repoUrl: 'https://github.com/JuanTrezza/voidwear'
   },
   {
     id: 'novacorp-clinic',
@@ -23,7 +25,9 @@ export const projectsData: Project[] = [
     icon: 'HeartPulse',
     metrics: 'Reducción del tiempo de asignación de turnos a solo unos clics.',
     challenges: 'Optimizar las consultas a Firebase Firestore para mantener una baja latencia en dispositivos móviles de gama media.',
-    techs: ['Angular', 'RxJS', 'Firebase Firestore', 'Firebase Auth', 'Tailwind']
+    techs: ['Angular', 'RxJS', 'Firebase Firestore', 'Firebase Auth', 'Tailwind'],
+    demoUrl: 'https://juantrezza.github.io/novacorp',
+    repoUrl: 'https://github.com/JuanTrezza/novacorp'
   },
   {
     id: 'nexus-platform',
@@ -35,7 +39,9 @@ export const projectsData: Project[] = [
     icon: 'LayoutDashboard',
     metrics: 'Carga de datos optimizada con React Concurrent Mode y Lazy list.',
     challenges: 'Lograr un renderizado fluido de múltiples gráficos de Recharts de manera simultánea sin impactar los fotogramas del navegador.',
-    techs: ['Next.js', 'React', 'Recharts', 'Tailwind CSS', 'TypeScript']
+    techs: ['Next.js', 'React', 'Recharts', 'Tailwind CSS', 'TypeScript'],
+    demoUrl: 'https://juantrezza.github.io/NEXUS-Project-Intelligence-Platform',
+    repoUrl: 'https://github.com/JuanTrezza/NEXUS-Project-Intelligence-Platform'
   },
   {
     id: 'weatherworld-3d',
@@ -47,7 +53,9 @@ export const projectsData: Project[] = [
     icon: 'Globe',
     metrics: 'Renderizado interactivo a 60 FPS estables utilizando WebGL.',
     challenges: 'Mapear correctamente las coordenadas geoespaciales (latitud y longitud) del API climática a los puntos vectoriales 3D de la esfera.',
-    techs: ['JavaScript ES6', 'Three.js', 'OpenWeather API', 'CSS Grid', 'Vite']
+    techs: ['JavaScript ES6', 'Three.js', 'OpenWeather API', 'CSS Grid', 'Vite'],
+    demoUrl: 'https://juantrezza.github.io/weather-app',
+    repoUrl: 'https://github.com/JuanTrezza/weather-app'
   },
   {
     id: 'afterlife-bar',
@@ -59,11 +67,13 @@ export const projectsData: Project[] = [
     icon: 'GlassWater',
     metrics: 'Experiencia interactiva premium que triplicó las reservas mensuales del bar.',
     challenges: 'Alineación precisa del scroll scrubbing para asegurar que las animaciones espaciales no causen saltos entre distintas secciones móviles.',
-    techs: ['HTML5', 'CSS Modules', 'GSAP', 'Lenis Scroll', 'SVG Filters']
+    techs: ['HTML5', 'CSS Modules', 'GSAP', 'Lenis Scroll', 'SVG Filters'],
+    demoUrl: 'https://juantrezza.github.io/afterlife-bar',
+    repoUrl: 'https://github.com/JuanTrezza/afterlife-bar'
   },
   {
     id: 'booking-system',
-    title: 'Booking System',
+    title: 'Sistema de Turnos',
     description: 'Aplicación interna para la gestión eficiente de citas y pacientes empresariales.',
     longDescription: 'Un sistema privado robusto diseñado para consultorios de alta concurrencia. Automatiza desde la reserva inicial hasta el seguimiento de pacientes, integrando recordatorios automáticos, asignación de salas físicas según disponibilidad técnica de equipamiento y reportes analíticos mensuales de ausentismo.',
     tags: ['ANGULAR', 'RXJS'],
@@ -71,7 +81,8 @@ export const projectsData: Project[] = [
     icon: 'CalendarDays',
     metrics: 'Reducción del ausentismo en un 18% gracias a flujos ágiles de re-programación.',
     challenges: 'Elaborar un motor interno de detección de colisiones horarias de médicos que reacciona de manera proactiva en milisegundos.',
-    techs: ['Angular', 'RxJS', 'TypeScript', 'Tailwind', 'Sass']
+    techs: ['Angular', 'RxJS', 'TypeScript', 'Tailwind', 'Sass'],
+    repoUrl: 'https://github.com/JuanTrezza/gestion-turnos'
   }
 ];
 

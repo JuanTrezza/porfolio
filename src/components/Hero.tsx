@@ -46,14 +46,10 @@ export default function Hero({ onNavClick }: HeroProps) {
     return () => clearTimeout(timeout);
   }, [roleIndex, subCharIndex, isDeleting]);
 
-  const handleDownloadCV = () => {
-    alert("Simulando descarga de Currículum Vitae (CV) de Juan Moreno Trezza.");
-  };
-
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-16 px-6 md:px-12 overflow-hidden bg-radial from-[#1b1b26]/50 via-[#13131b] to-[#0a0a0f]"
+      className="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-16 px-6 md:px-12 overflow-hidden bg-hero-radial"
     >
       {/* Background ambient glowing orbs */}
       <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-[#8083ff]/10 blur-[100px] pointer-events-none" />
@@ -122,14 +118,16 @@ export default function Hero({ onNavClick }: HeroProps) {
             Ver mis proyectos
             <ArrowRight size={16} />
           </button>
-          <button
+          <a
             id="hero-btn-cv"
-            onClick={handleDownloadCV}
+            href="https://drive.google.com/file/d/1example/view"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-[#393841] hover:border-white text-white hover:bg-white/5 font-semibold text-sm tracking-wide transition-all duration-300 w-full sm:w-auto cursor-pointer"
           >
             Descargar CV
             <ArrowDownToLine size={16} />
-          </button>
+          </a>
         </motion.div>
 
         {/* Stats Blocks (with staggered entrance) */}
