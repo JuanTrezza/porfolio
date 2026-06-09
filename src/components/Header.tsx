@@ -76,8 +76,8 @@ export default function Header({ activeSection, onNavClick }: HeaderProps) {
         <div className="hidden lg:block">
           <a
             id="download-cv-btn-desktop"
-            href="/porfolio/CV_Juan_Moreno_Trezza_.pdf"
-            download="CV_Juan_Moreno_Trezza.pdf"
+            href="https://drive.google.com/file/d/1mXLa2QvmiGJVR7wJZOzDBfmkON1qPMbJ/view?usp=sharing"
+
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2 rounded-lg bg-[#8083ff] hover:bg-[#c0c1ff] text-[#0d0096] hover:text-[#1000a9] font-medium text-xs tracking-wider uppercase transition-all duration-300 shadow-md shadow-[#8083ff]/20 hover:scale-[1.03]"
@@ -125,8 +125,8 @@ export default function Header({ activeSection, onNavClick }: HeaderProps) {
           </div>
           <a
             id="download-cv-btn-mobile"
-            href="/porfolio/CV_Juan_Moreno_Trezza_.pdf"
-            download="CV_Juan_Moreno_Trezza.pdf"
+            href="https://drive.google.com/file/d/1mXLa2QvmiGJVR7wJZOzDBfmkON1qPMbJ/view?usp=sharing"
+
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsMobileMenuOpen(false)}
