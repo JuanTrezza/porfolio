@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-background: #13131b;
+  --color-brand-surface: #13131b;
+  --color-brand-surface-dim: #13131b;
+  --color-brand-surface-bright: #393841;
+  --color-brand-primary: #c0c1ff;
+  --color-brand-secondary: #d0bcff;
+  --color-brand-accent: #4edea3;
+  --color-brand-on-primary: #1000a9;
+  --color-brand-on-surface: #e4e1ed;
+  --color-brand-on-surface-variant: #c7c4d7;
+  --color-brand-card: #111118;
+  --color-brand-border: rgba(255, 255, 255, 0.08);
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+body {
+  background-color: #13131b;
+  color: #e4e1ed;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility classes */
+.glass-panel {
+  background-color: rgba(17, 17, 24, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover:hover {
+  background-color: rgba(27, 27, 35, 0.85);
+  border-color: rgba(192, 193, 255, 0.25);
+  box-shadow: 0 10px 30px -15px rgba(192, 193, 255, 0.1);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #c0c1ff 0%, #d0bcff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom indicator or pulsing dot */
+.pulse-glow {
+  box-shadow: 0 0 0 0 rgba(78, 222, 163, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(78, 222, 163, 0.4);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(78, 222, 163, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(78, 222, 163, 0);
+  }
+}
+
+/* Hide scrollbar for elements */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
