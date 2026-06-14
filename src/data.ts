@@ -83,6 +83,42 @@ export const projectsData: Project[] = [
     challenges: 'Elaborar un motor interno de detección de colisiones horarias de médicos que reacciona de manera proactiva en milisegundos.',
     techs: ['Angular', 'RxJS', 'TypeScript', 'Tailwind', 'Sass'],
     repoUrl: 'https://github.com/JuanTrezza/gestion-turnos'
+  },
+  {
+    id: 'mesa-reservations',
+    title: 'MESA — Sistema de Reservas Premium',
+    description: 'Sistema de reservas para restaurantes con calendario interactivo, selector de horarios en tiempo real, gestión de zonas y confirmación instantánea. Diseño elegante con tipografía serif y acentos dorados.',
+    longDescription: 'Sistema de reservas para restaurantes con calendario interactivo, selector de horarios en tiempo real, gestión de zonas y confirmación instantánea. Diseño elegante con tipografía serif y acentos dorados.',
+    tags: ['REACT', 'TAILWIND'],
+    category: 'React',
+    icon: 'CalendarDays',
+    techs: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    demoUrl: 'https://juantrezza.github.io/mesa-reservations/',
+    repoUrl: 'https://github.com/JuanTrezza/mesa-reservations'
+  },
+  {
+    id: 'arena-tickets',
+    title: 'ARENA TICKETS — Venta de Entradas',
+    description: 'Plataforma de venta de entradas para eventos del Movistar Arena con catálogo, modal de compra, panel de administración y persistencia real con Firebase Firestore. Stock en tiempo real y gestión completa de eventos.',
+    longDescription: 'Plataforma de venta de entradas para eventos del Movistar Arena con catálogo, modal de compra, panel de administración y persistencia real con Firebase Firestore. Stock en tiempo real y gestión completa de eventos.',
+    tags: ['REACT', 'FIREBASE'],
+    category: 'React',
+    icon: 'LayoutDashboard',
+    techs: ['React', 'TypeScript', 'Firebase', 'Firestore'],
+    demoUrl: 'https://juantrezza.github.io/ARENA-TICKETS-Plataforma-de-Venta-de-Entradas/',
+    repoUrl: 'https://github.com/JuanTrezza/ARENA-TICKETS-Plataforma-de-Venta-de-Entradas'
+  },
+  {
+    id: 'cinemax-pro',
+    title: 'CINEMAX PRO — Movie Discovery',
+    description: 'Plataforma estilo Netflix de descubrimiento de películas. Consume la API de TMDb en tiempo real con búsqueda, filtros por género, modal con trailer y sistema de favoritos persistente.',
+    longDescription: 'Plataforma estilo Netflix de descubrimiento de películas. Consume la API de TMDb en tiempo real con búsqueda, filtros por género, modal con trailer y sistema de favoritos persistente.',
+    tags: ['REACT', 'TMDB API'],
+    category: 'React',
+    icon: 'Globe',
+    techs: ['React', 'TypeScript', 'TMDb API', 'Framer Motion'],
+    demoUrl: 'https://juantrezza.github.io/cinemaxpro/',
+    repoUrl: 'https://github.com/JuanTrezza/cinemaxpro'
   }
 ];
 
