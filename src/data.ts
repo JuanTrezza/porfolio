@@ -119,6 +119,18 @@ export const projectsData: Project[] = [
     techs: ['React', 'TypeScript', 'TMDb API', 'Framer Motion'],
     demoUrl: 'https://juantrezza.github.io/cinemaxpro/',
     repoUrl: 'https://github.com/JuanTrezza/cinemaxpro'
+  },
+  {
+    id: 'petcare-plus',
+    title: 'PetCare Plus — Clínica Veterinaria',
+    description: 'Plataforma de clínica veterinaria con sistema de reservas de turnos online, gestión de mascotas y catálogo de servicios. Persistencia local con LocalStorage. Diseño cálido y profesional.',
+    longDescription: 'Plataforma de clínica veterinaria con sistema de reservas de turnos online, gestión de mascotas y catálogo de servicios. Persistencia local con LocalStorage. Diseño cálido y profesional.',
+    tags: ['REACT', 'LOCALSTORAGE'],
+    category: 'React',
+    icon: 'HeartPulse',
+    techs: ['React', 'TypeScript', 'Tailwind CSS', 'LocalStorage'],
+    demoUrl: 'https://juantrezza.github.io/veterinaria/',
+    repoUrl: 'https://github.com/JuanTrezza/veterinaria'
   }
 ];
 
