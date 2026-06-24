@@ -131,6 +131,18 @@ export const projectsData: Project[] = [
     techs: ['React', 'TypeScript', 'Tailwind CSS', 'LocalStorage'],
     demoUrl: 'https://juantrezza.github.io/veterinaria/',
     repoUrl: 'https://github.com/JuanTrezza/veterinaria'
+  },
+  {
+    id: 'pulse-analytics',
+    title: 'PULSE — Analytics Dashboard',
+    description: 'Dashboard de analytics para e-commerce con métricas en tiempo real, visualización avanzada con Recharts, embudo de conversión y segmentación de clientes. Diseño inspirado en Linear y Vercel.',
+    longDescription: 'Dashboard de analytics para e-commerce con métricas en tiempo real, visualización avanzada con Recharts, embudo de conversión y segmentación de clientes. Diseño inspirado en Linear y Vercel.',
+    tags: ['REACT', 'RECHARTS'],
+    category: 'React',
+    icon: 'LayoutDashboard',
+    techs: ['React', 'TypeScript', 'Recharts', 'Tailwind CSS'],
+    demoUrl: 'https://juantrezza.github.io/pulse-analytics/',
+    repoUrl: 'https://github.com/JuanTrezza/pulse-analytics'
   }
 ];
 
