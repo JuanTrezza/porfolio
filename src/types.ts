@@ -4,7 +4,7 @@ export interface Project {
   description: string;
   longDescription: string;
   tags: string[];
-  category: 'React' | 'Angular' | 'JS Native';
+  category: 'React' | 'Angular' | 'JS Native' | 'Python';
   icon: string;
   metrics?: string;
   challenges?: string;

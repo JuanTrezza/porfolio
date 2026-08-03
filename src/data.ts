@@ -143,6 +143,30 @@ export const projectsData: Project[] = [
     techs: ['React', 'TypeScript', 'Recharts', 'Tailwind CSS'],
     demoUrl: 'https://juantrezza.github.io/pulse-analytics/',
     repoUrl: 'https://github.com/JuanTrezza/pulse-analytics'
+  },
+  {
+    id: 'dashboard-finanzas-personal',
+    title: 'Dashboard Finanzas — Gestor Personal',
+    description: 'Aplicación de consola en Python para registrar y analizar movimientos financieros. Incluye tablas coloreadas con Rich, resúmenes automáticos, filtros por categoría, exportación a Excel y sistema de logs. Proyecto de la Tecnicatura en Ciencia de Datos e IA.',
+    longDescription: 'Aplicación de consola en Python para registrar y analizar movimientos financieros. Incluye tablas coloreadas con Rich, resúmenes automáticos, filtros por categoría, exportación a Excel y sistema de logs. Proyecto de la Tecnicatura en Ciencia de Datos e IA.',
+    tags: ['PYTHON', 'RICH'],
+    category: 'Python',
+    icon: 'Terminal',
+    techs: ['Python', 'Rich', 'Pandas', 'Openpyxl', 'JSON'],
+    demoUrl: 'https://juantrezza.github.io/dashboard-finanzas-personal/',
+    repoUrl: 'https://github.com/JuanTrezza/dashboard-finanzas-personal'
+  },
+  {
+    id: 'gestor-tareas-cli',
+    title: 'Gestor de Tareas — CLI con Prioridad',
+    description: 'Aplicación de línea de comandos en Python para organizar tareas por nivel de prioridad (Alta, Media, Baja). Incluye tablas coloreadas con Rich, persistencia en JSON, filtros y sistema de logs. Proyecto académico de ISTEA.',
+    longDescription: 'Aplicación de línea de comandos en Python para organizar tareas por nivel de prioridad (Alta, Media, Baja). Incluye tablas coloreadas con Rich, persistencia en JSON, filtros y sistema de logs. Proyecto académico de ISTEA.',
+    tags: ['PYTHON', 'CLI'],
+    category: 'Python',
+    icon: 'Terminal',
+    techs: ['Python', 'Rich', 'JSON', 'Logging'],
+    demoUrl: 'https://juantrezza.github.io/gestor-tareas-parcial2/',
+    repoUrl: 'https://github.com/JuanTrezza/gestor-tareas-parcial2'
   }
 ];
 

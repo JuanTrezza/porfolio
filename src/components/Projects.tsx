@@ -12,13 +12,14 @@ import {
   TrendingUp, 
   Zap,
   Globe2,
-  Code
+  Code,
+  Terminal
 } from 'lucide-react';
 import { projectsData } from '../data';
 import { Project } from '../types';
 
 export default function Projects() {
-  const [activeFilter, setActiveFilter] = useState<'Todos' | 'React' | 'Angular' | 'JS Native'>('Todos');
+  const [activeFilter, setActiveFilter] = useState<'Todos' | 'React' | 'Angular' | 'JS Native' | 'Python'>('Todos');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   // Filter projects list
@@ -41,6 +42,8 @@ export default function Projects() {
         return <GlassWater className={className} />;
       case 'CalendarDays':
         return <CalendarDays className={className} />;
+      case 'Terminal':
+        return <Terminal className={className} />;
       default:
         return <ShoppingBag className={className} />;
     }
@@ -72,7 +75,7 @@ export default function Projects() {
             id="projects-tabs-row"
             className="flex items-center gap-2 p-1.5 rounded-xl bg-[#111118] border border-white/5 overflow-x-auto no-scrollbar self-start md:self-auto"
           >
-            {(['Todos', 'React', 'Angular', 'JS Native'] as const).map((filter) => (
+            {(['Todos', 'React', 'Angular', 'JS Native', 'Python'] as const).map((filter) => (
               <button
                 key={filter}
                 id={`filter-tab-${filter.replace(' ', '_')}`}

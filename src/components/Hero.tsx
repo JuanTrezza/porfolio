@@ -141,7 +141,7 @@ export default function Hero({ onNavClick }: HeroProps) {
         >
           {[
             { id: 'stat-exp', icon: <Briefcase size={16} />, value: '+2', label: 'Años Exp.' },
-            { id: 'stat-proj', icon: <FolderGit2 size={16} />, value: '+20', label: 'Proyectos' },
+            { id: 'stat-proj', icon: <FolderGit2 size={16} />, value: '+22', label: 'Proyectos' },
             { id: 'stat-edu', icon: <GraduationCap size={16} />, value: 'ITLM/ISTEA', label: 'Formación' },
             { id: 'stat-ui', icon: <Sparkles size={16} />, value: 'UX/UI', label: 'Especialidad' },
           ].map((stat) => (
