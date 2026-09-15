@@ -121,6 +121,18 @@ export const projectsData: Project[] = [
     repoUrl: 'https://github.com/JuanTrezza/cinemaxpro'
   },
   {
+    id: 'nexus-games',
+    title: 'NEXUS GAMES',
+    description: 'Plataforma premium de descubrimiento de videojuegos con 500.000+ títulos. Búsqueda avanzada, filtros por plataforma y género, detalles completos con screenshots y wishlist personal. Consume API pública de RAWG.io.',
+    longDescription: 'Plataforma premium de descubrimiento de videojuegos con 500.000+ títulos. Búsqueda avanzada, filtros por plataforma y género, detalles completos con screenshots y wishlist personal. Consume API pública de RAWG.io.',
+    tags: ['REACT', 'RAWG API'],
+    category: 'React',
+    icon: 'Gamepad2',
+    techs: ['React 19', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite', 'RAWG.io API'],
+    demoUrl: 'https://juantrezza.github.io/nexus-games/',
+    repoUrl: 'https://github.com/JuanTrezza/nexus-games'
+  },
+  {
     id: 'petcare-plus',
     title: 'PetCare Plus — Clínica Veterinaria',
     description: 'Plataforma de clínica veterinaria con sistema de reservas de turnos online, gestión de mascotas y catálogo de servicios. Persistencia local con LocalStorage. Diseño cálido y profesional.',
@@ -201,7 +213,8 @@ export const certificationsData: Certification[] = [
   { id: 'cert-ibm', title: 'Data Science Foundation', issuer: 'IBM', iconName: 'ibm' },
   { id: 'cert-redhat', title: 'Python Dev Specialist', issuer: 'Red Hat', iconName: 'redhat' },
   { id: 'cert-santander', title: 'Tecnología y Análisis', issuer: 'Santander', iconName: 'santander' },
-  { id: 'cert-openjs', title: 'Node.js Developer', issuer: 'OpenJS', iconName: 'openjs' }
+  { id: 'cert-openjs', title: 'Node.js Developer', issuer: 'OpenJS', iconName: 'openjs' },
+  { id: 'cert-educacionit', title: 'Data Analytics & Visualization', issuer: 'EducaciónIT', iconName: 'educacionit' }
 ];
 
 export const experienceData: ExperienceItem[] = [

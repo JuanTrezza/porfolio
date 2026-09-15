@@ -35,6 +35,12 @@ export default function Certifications() {
           text: 'text-[#83CD29]',
           border: 'border-[#83CD29]/20'
         };
+      case 'educaciónit':
+        return {
+          bg: 'bg-[#1E3AF2]/10',
+          text: 'text-[#1E3AF2]',
+          border: 'border-[#1E3AF2]/20'
+        };
       default:
         return {
           bg: 'bg-white/5',

@@ -13,7 +13,8 @@ import {
   Zap,
   Globe2,
   Code,
-  Terminal
+  Terminal,
+  Gamepad2
 } from 'lucide-react';
 import { projectsData } from '../data';
 import { Project } from '../types';
@@ -44,6 +45,8 @@ export default function Projects() {
         return <CalendarDays className={className} />;
       case 'Terminal':
         return <Terminal className={className} />;
+      case 'Gamepad2':
+        return <Gamepad2 className={className} />;
       default:
         return <ShoppingBag className={className} />;
     }

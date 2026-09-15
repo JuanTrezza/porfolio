@@ -120,7 +120,7 @@ export default function Hero({ onNavClick }: HeroProps) {
           </button>
           <a
             id="hero-btn-cv"
-            href="https://drive.google.com/file/d/1mXLa2QvmiGJVR7wJZOzDBfmkON1qPMbJ/view?usp=sharing"
+            href={`${import.meta.env.BASE_URL}CV_Juan_Moreno_Trezza.pdf`}
 
             target="_blank"
             rel="noopener noreferrer"

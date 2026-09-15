@@ -23,7 +23,7 @@ export interface Certification {
   id: string;
   title: string;
   issuer: string;
-  iconName: 'google' | 'ibm' | 'redhat' | 'santander' | 'openjs';
+  iconName: 'google' | 'ibm' | 'redhat' | 'santander' | 'openjs' | 'educacionit';
 }
 
 export interface ExperienceItem {
