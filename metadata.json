@@ -1,6 +1,6 @@
 {
-  "name": "Portafolio Juan Moreno Trezza",
-  "description": "Portafolio profesional interactivo de desarrollo frontend y diseño de interfaces con temas oscuros, animaciones fluidas, stack tecnológico y formulario de contacto.",
+  "name": "Juan Moreno Trezza — Frontend Developer",
+  "description": "Portfolio de Juan Moreno Trezza, Desarrollador Frontend radicado en Buenos Aires. Diseño y desarrollo de interfaces de alta fidelidad con React, TypeScript y motion.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

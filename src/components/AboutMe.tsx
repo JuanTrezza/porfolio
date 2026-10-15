@@ -1,156 +1,170 @@
-import { motion } from 'motion/react';
-import { PenTool, Laptop, GraduationCap, Calendar, MapPin } from 'lucide-react';
-import { educationData } from '../data';
+import React from 'react';
+import { PORTFOLIO_INFO, EDUCATION_LIST, EXPERIENCE_DATA } from '../data/portfolioData';
 
-export default function AboutMe() {
+export const AboutMe: React.FC = () => {
   return (
     <section
-      id="about"
-      className="py-24 px-6 md:px-12 bg-[#13131b] border-t border-white/5 relative"
+      id="sobre-mi"
+      className="w-full px-5 md:px-8 lg:px-12 py-16 md:py-20 border-b border-[#c4c7c7] bg-[#faf9f5]"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
-          {/* LEFT COLUMN: Profile Card (4 Columns wide in large screen) */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:col-span-5 xl:col-span-4"
-          >
-            <div id="profile-card" className="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col gap-6 relative overflow-hidden group">
-              {/* Subtle top reflection */}
-              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#8083ff]/40 to-transparent" />
-              
-              {/* JMT Logo / Avatar Container */}
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#c0c1ff] to-[#8083ff] flex items-center justify-center font-display font-extrabold text-[#1000a9] text-2xl shadow-lg shadow-[#8083ff]/15">
-                  JMT
-                </div>
-                <div>
-                  <h3 id="profile-name" className="font-display font-bold text-white text-lg tracking-tight">
-                    Juan Moreno Trezza
-                  </h3>
-                  <p id="profile-title" className="text-[#c0c1ff] font-mono text-xs font-semibold">
-                    Frontend Developer Jr.
-                  </p>
-                </div>
+      {/* Section Title */}
+      <div className="flex items-center gap-3 mb-10">
+        <span className="font-mono-code text-[11px] text-[#712ae2] font-semibold uppercase">
+          02 // PERFIL Y TRAYECTORIA
+        </span>
+        <div className="h-px bg-[#c4c7c7] flex-1"></div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
+        {/* Left Column: Portrait */}
+        <div className="lg:col-span-5 flex flex-col gap-3">
+          <div className="border border-[#c4c7c7] p-2 bg-[#f5f4ef] relative group">
+            {/* Aspect container 3:4 */}
+            <div className="overflow-hidden aspect-[3/4] bg-[#e3e2df] relative flex flex-col items-center justify-center p-8 select-none border border-[#c4c7c7]/50">
+              {/* Architectural Framing Marks */}
+              <div className="absolute top-3 left-3 font-mono-code text-[10px] text-[#444748] tracking-widest">
+                [ +34.6037 / -58.3816 ]
+              </div>
+              <div className="absolute top-3 right-3 font-mono-code text-[10px] text-[#444748] tracking-widest">
+                ISO 400 · 1/250s
+              </div>
+              <div className="absolute bottom-3 left-3 font-mono-code text-[9px] text-[#444748]">
+                FRAME 24A
+              </div>
+              <div className="absolute bottom-3 right-3 font-mono-code text-[9px] text-[#712ae2]">
+                ● JMT
               </div>
 
-              {/* Badges/Skill tags */}
-              <div id="profile-chips" className="flex flex-wrap gap-1.5 pt-2">
-                {['React', 'Angular', 'Typescript', 'Tailwind'].map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-[#e4e1ed] font-mono text-[10px] uppercase font-semibold"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              {/* Grid Crosshair & Lines */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+                <div className="w-full h-px bg-[#1b1c1a]"></div>
+                <div className="h-full w-px bg-[#1b1c1a] absolute"></div>
               </div>
 
-              {/* Education section inside the profile card */}
-              <div id="profile-education" className="flex flex-col gap-4 pt-4 border-t border-white/5">
-                <h4 className="text-xs uppercase tracking-wider font-mono text-[#c7c4d7] font-semibold flex items-center gap-1.5">
-                  <GraduationCap size={14} className="text-[#8083ff]" />
-                  Educación / Formación
+              {/* Portrait */}
+              <div className="relative z-10 flex flex-col items-center justify-center text-center">
+                <div className="w-48 h-48 md:w-56 md:h-56 rounded-full border border-[#1b1c1a] overflow-hidden bg-[#faf9f5] shadow-sm mb-4 group-hover:border-[#712ae2] transition-colors">
+                  {/* La foto trae su propio recorte circular: el scale oculta el borde oscuro */}
+                  <img
+                    src={PORTFOLIO_INFO.photoUrl}
+                    alt="Juan Moreno Trezza"
+                    className="w-full h-full object-cover scale-[1.12]"
+                  />
+                </div>
+                <h4 className="font-syne text-base md:text-lg font-bold uppercase tracking-wider text-[#1b1c1a]">
+                  JUAN MORENO TREZZA
                 </h4>
-                
-                <div className="flex flex-col gap-4">
-                  {educationData.map((edu) => (
-                    <div key={edu.id} className="relative pl-4 border-l border-white/10 flex flex-col gap-0.5">
-                      {/* Node point */}
-                      <span className="absolute -left-1 top-2 w-2 h-2 rounded-full bg-[#8083ff]" />
-                      
-                      <div className="flex items-center justify-between gap-2">
-                        <span className="font-display font-bold text-white text-xs sm:text-sm">
-                          {edu.institution}
-                        </span>
-                        <span className="font-mono text-[10px] text-[#c0c1ff] font-semibold flex items-center gap-1">
-                          <Calendar size={10} />
-                          {edu.period}
-                        </span>
-                      </div>
-                      
-                      <span className="text-[#c7c4d7] text-xs font-medium">
-                        {edu.degree}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Meta details */}
-              <div className="pt-4 border-t border-white/5 flex items-center gap-3 text-xs text-[#c7c4d7]">
-                <div className="flex items-center gap-1">
-                  <MapPin size={12} className="text-[#8083ff]" />
-                  <span>Buenos Aires, Argentina</span>
-                </div>
-                <span className="text-white/10">|</span>
-                <span>23 años</span>
+                <p className="font-mono-code text-[11px] text-[#444748] uppercase tracking-widest mt-1">
+                  {PORTFOLIO_INFO.role}
+                </p>
               </div>
             </div>
-          </motion.div>
 
-          {/* RIGHT COLUMN: Copy + Dual Cards (8 Columns wide in large screen) */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="lg:col-span-7 xl:col-span-8 flex flex-col gap-8 lg:pt-4"
-          >
-            {/* Catchy headline */}
-            <div className="flex flex-col gap-3">
-              <span className="font-mono text-xs uppercase tracking-widest text-[#8083ff] font-bold">
-                Sobre Mí
-              </span>
-              <h2 id="about-headline" className="font-display font-extrabold text-3xl md:text-4xl text-white tracking-tight leading-tight">
-                Apasionado por la fusión entre diseño y código.
-              </h2>
+            {/* Bottom Meta */}
+            <div className="flex items-center justify-between pt-2 mt-1 border-t border-[#c4c7c7] text-[10px] font-mono-code uppercase text-[#444748]">
+              <span>BA_STUDIO_2026.RAW</span>
+              <span className="text-[#1b1c1a]">35MM DIGITAL ARCHIVE</span>
             </div>
+          </div>
 
-            {/* Description Text */}
-            <p id="about-description" className="text-[#c7c4d7] text-base md:text-lg leading-relaxed font-sans max-w-3xl">
-              Desarrollador de 23 años radicado en Buenos Aires, enfocado en construir experiencias digitales fluidas y estéticamente impecables. Mi paso por <span className="text-white font-semibold">Leopoldo Marechal</span> me permite abordar proyectos con una visión integral, mientras que mi base en diseño UI/UX garantiza que cada elemento interactivo tenga un propósito visual. Actualmente me encuentro cursando la <span className="text-white font-semibold">Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial en ISTEA</span>.
+          <div className="p-3 border border-[#c4c7c7] bg-[#faf9f5] text-[11px] font-mono-code flex items-center justify-between">
+            <span className="text-[#444748]">{PORTFOLIO_INFO.name}</span>
+            <span className="text-[#712ae2] font-semibold">{PORTFOLIO_INFO.role}</span>
+          </div>
+        </div>
+
+        {/* Right Column: Editorial Bio, Academics & Roles */}
+        <div className="lg:col-span-7 flex flex-col gap-8">
+          {/* Manifiesto */}
+          <div>
+            <span className="font-mono-code text-xs uppercase text-[#444748] mb-2 block tracking-wider font-semibold">
+              MANIFIESTO
+            </span>
+            <p className="font-syne text-xl md:text-2xl font-medium leading-relaxed text-[#1b1c1a]">
+              {PORTFOLIO_INFO.manifesto}
             </p>
+          </div>
 
-            {/* Dual Core Pillars Cards */}
-            <div id="about-pillars" className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2">
-              
-              {/* Pile 1: UX/UI */}
-              <div className="glass-panel rounded-xl p-6 flex flex-col gap-3 relative overflow-hidden group hover:border-[#8083ff]/30 transition-all duration-300">
-                <div className="w-10 h-10 rounded-lg bg-[#4edea3]/5 text-[#4edea3] flex items-center justify-center border border-[#4edea3]/10">
-                  <PenTool size={18} />
+          {/* Formación Académica */}
+          <div className="border-t border-[#c4c7c7] pt-6">
+            <span className="font-mono-code text-xs uppercase text-[#712ae2] font-semibold block mb-4 tracking-wider">
+              FORMACIÓN ACADÉMICA
+            </span>
+
+            <div className="flex flex-col gap-5">
+              {/* Item 1: ISTEA */}
+              <div className="border-l-2 border-[#1b1c1a] pl-4 py-1">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                  <h4 className="font-syne text-base md:text-[18px] uppercase text-[#1b1c1a] font-bold">
+                    {EDUCATION_LIST[0].title}
+                  </h4>
+                  <span className="font-mono-code text-[11px] text-[#712ae2] font-semibold shrink-0">
+                    {EDUCATION_LIST[0].period} · {EDUCATION_LIST[0].status.toUpperCase()}
+                  </span>
                 </div>
-                <h3 className="font-display font-bold text-white text-base">
-                  Diseño UI/UX
-                </h3>
-                <p className="text-[#c7c4d7] text-sm leading-relaxed">
-                  Prototipado en Figma y creación de sistemas de diseño escalables, optimizando la consistencia visual y la interacción.
+                <p className="font-inter text-sm text-[#444748] leading-relaxed">
+                  <strong className="text-[#1b1c1a] font-medium">{EDUCATION_LIST[0].institution}</strong> ·{' '}
+                  {EDUCATION_LIST[0].description}
                 </p>
               </div>
 
-              {/* Pile 2: Frontend */}
-              <div className="glass-panel rounded-xl p-6 flex flex-col gap-3 relative overflow-hidden group hover:border-[#8083ff]/30 transition-all duration-300">
-                <div className="w-10 h-10 rounded-lg bg-[#8083ff]/5 text-[#8083ff] flex items-center justify-center border border-[#8083ff]/10">
-                  <Laptop size={18} />
+              {/* Item 2: Leopoldo Marechal */}
+              <div className="border-l-2 border-[#c4c7c7] pl-4 py-1">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1">
+                  <h4 className="font-syne text-base md:text-[18px] uppercase text-[#1b1c1a] font-bold">
+                    {EDUCATION_LIST[1].title}
+                  </h4>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <span className="font-mono-code text-[11px] text-[#444748] uppercase">
+                      {EDUCATION_LIST[1].period} · {EDUCATION_LIST[1].status}
+                    </span>
+                    {EDUCATION_LIST[1].grade && (
+                      <span className="font-mono-code text-[10px] bg-[#efeeea] px-1.5 py-0.5 border border-[#c4c7c7] text-[#1b1c1a] font-semibold">
+                        {EDUCATION_LIST[1].grade}
+                      </span>
+                    )}
+                  </div>
                 </div>
-                <h3 className="font-display font-bold text-white text-base">
-                  Frontend Dev
-                </h3>
-                <p className="text-[#c7c4d7] text-sm leading-relaxed">
-                  Implementación técnica limpia con las mejores prácticas del mercado, logrando código modular, rápido y accesible.
+                <p className="font-inter text-sm text-[#444748] leading-relaxed">
+                  <strong className="text-[#1b1c1a] font-medium">{EDUCATION_LIST[1].institution}</strong> ·{' '}
+                  {EDUCATION_LIST[1].description}
                 </p>
               </div>
-
             </div>
+          </div>
 
-          </motion.div>
+          {/* Experiencia */}
+          <div className="border-t border-[#c4c7c7] pt-6">
+            <span className="font-mono-code text-xs uppercase text-[#712ae2] font-semibold block mb-4 tracking-wider">
+              EXPERIENCIA
+            </span>
 
+            <div className="p-5 bg-[#f5f4ef] border border-[#c4c7c7]">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <h4 className="font-syne text-lg md:text-xl uppercase font-bold text-[#1b1c1a]">
+                  {EXPERIENCE_DATA.company}
+                </h4>
+                <div className="flex items-center gap-2">
+                  <span className="font-mono-code text-[10px] text-[#712ae2] bg-white px-2 py-0.5 border border-[#c4c7c7] font-semibold uppercase">
+                    {EXPERIENCE_DATA.period}
+                  </span>
+                  <span className="font-mono-code text-[10px] text-[#444748] uppercase">
+                    {EXPERIENCE_DATA.location}
+                  </span>
+                </div>
+              </div>
+
+              <p className="font-mono-code text-xs text-[#1b1c1a] font-semibold mb-2">
+                {EXPERIENCE_DATA.role}
+              </p>
+
+              <p className="font-inter text-sm md:text-[15px] text-[#444748] leading-relaxed">
+                "{EXPERIENCE_DATA.description}"
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
-}
+};
