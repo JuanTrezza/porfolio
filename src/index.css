@@ -61,3 +61,11 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #712ae2;
 }
+
+/* Máscara de los reveals por palabra (SplitText). El interlineado de los titulares es menor que
+   el cuerpo de la palabra en serif ("se sienten", "juntos"): el padding agranda la máscara para
+   no recortar los trazos y el margen negativo lo compensa, así el texto no se mueve. */
+.reveal-word-mask {
+  padding: 0.14em 0.06em;
+  margin: -0.14em -0.06em;
+}

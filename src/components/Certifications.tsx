@@ -1,7 +1,9 @@
 import React from 'react';
 import { CERTIFICATIONS_LIST } from '../data/portfolioData';
+import { useTitleReveal } from '../hooks/useTitleReveal';
 
 export const Certifications: React.FC = () => {
+  const titleRef = useTitleReveal<HTMLHeadingElement>();
   return (
     <section className="w-full px-5 md:px-8 lg:px-12 py-16 md:py-20 border-b border-[#c4c7c7] bg-[#f5f4ef]">
       <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-8 gap-2 border-b border-[#c4c7c7] pb-3">
@@ -9,7 +11,7 @@ export const Certifications: React.FC = () => {
           <span className="font-mono-code text-[11px] text-[#712ae2] font-semibold uppercase">
             04 // VALIDACIÓN
           </span>
-          <h2 className="font-syne text-2xl md:text-3xl lg:text-4xl uppercase text-[#1b1c1a] tracking-tight font-bold">
+          <h2 ref={titleRef} className="font-syne text-2xl md:text-3xl lg:text-4xl uppercase text-[#1b1c1a] tracking-tight font-bold">
             CERTIFICACIONES
           </h2>
         </div>

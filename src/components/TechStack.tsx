@@ -1,7 +1,9 @@
 import React from 'react';
 import { STACK_CATEGORIES } from '../data/portfolioData';
+import { useTitleReveal } from '../hooks/useTitleReveal';
 
 export const TechStack: React.FC = () => {
+  const titleRef = useTitleReveal<HTMLHeadingElement>();
   return (
     <section
       id="stack"
@@ -12,7 +14,7 @@ export const TechStack: React.FC = () => {
           <span className="font-mono-code text-[11px] text-[#712ae2] uppercase font-semibold">
             03 // TOOLKIT & CAPACIDADES
           </span>
-          <h2 className="font-syne text-2xl md:text-3xl lg:text-4xl uppercase text-[#1b1c1a] tracking-tight font-bold">
+          <h2 ref={titleRef} className="font-syne text-2xl md:text-3xl lg:text-4xl uppercase text-[#1b1c1a] tracking-tight font-bold">
             STACK TECNOLÓGICO
           </h2>
         </div>

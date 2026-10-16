@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { PORTFOLIO_INFO } from '../data/portfolioData';
+import { useTitleReveal } from '../hooks/useTitleReveal';
 
 export const ContactCTA: React.FC = () => {
+  const titleRef = useTitleReveal<HTMLHeadingElement>();
   const [copyStatus, setCopyStatus] = useState<'idle' | 'copied'>('idle');
 
   const handleCopyEmail = () => {
@@ -19,7 +21,7 @@ export const ContactCTA: React.FC = () => {
           05 // INICIAR CONVERSACIÓN
         </span>
 
-        <h2 className="font-syne text-[min(38px,calc((100vw-40px)/12.8))] leading-[min(44px,calc((100vw-40px)/12.8*1.158))] sm:text-[min(56px,calc((100vw-40px)/12.8))] sm:leading-[min(60px,calc((100vw-40px)/12.8*1.071))] md:text-[min(72px,calc((100vw-64px)/12.8))] md:leading-[min(76px,calc((100vw-64px)/12.8*1.056))] lg:text-[min(84px,calc((100vw-96px)/12.8))] lg:leading-[min(90px,calc((100vw-96px)/12.8*1.071))] font-extrabold uppercase tracking-tight text-[#1b1c1a] mb-8">
+        <h2 ref={titleRef} className="font-syne text-[min(38px,calc((100vw-40px)/12.8))] leading-[min(44px,calc((100vw-40px)/12.8*1.158))] sm:text-[min(56px,calc((100vw-40px)/12.8))] sm:leading-[min(60px,calc((100vw-40px)/12.8*1.071))] md:text-[min(72px,calc((100vw-64px)/12.8))] md:leading-[min(76px,calc((100vw-64px)/12.8*1.056))] lg:text-[min(84px,calc((100vw-96px)/12.8))] lg:leading-[min(90px,calc((100vw-96px)/12.8*1.071))] font-extrabold uppercase tracking-tight text-[#1b1c1a] mb-8">
           ¿Trabajamos{' '}
           <em className="font-playfair text-[min(44px,calc((100vw-40px)/12.8*1.158))] sm:text-[min(66px,calc((100vw-40px)/12.8*1.179))] md:text-[min(84px,calc((100vw-64px)/12.8*1.167))] lg:text-[min(98px,calc((100vw-96px)/12.8*1.167))] lowercase font-normal text-[#712ae2] not-italic">
             juntos

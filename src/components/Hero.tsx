@@ -1,8 +1,10 @@
 import React from 'react';
 import { PORTFOLIO_INFO } from '../data/portfolioData';
+import { useTitleReveal } from '../hooks/useTitleReveal';
 import { handleAnchorClick } from '../lib/scroll';
 
 export const Hero: React.FC = () => {
+  const titleRef = useTitleReveal<HTMLHeadingElement>({ trigger: 'load' });
   return (
     <section className="relative w-full border-b border-[#c4c7c7] px-5 md:px-8 lg:px-12 pt-12 md:pt-16 pb-8 md:pb-12 overflow-hidden bg-[#faf9f5]">
       {/* Top Metadata Bar */}
@@ -26,7 +28,7 @@ export const Hero: React.FC = () => {
 
       {/* Monumental Typography */}
       <div className="max-w-6xl my-4 md:my-8">
-        <h1 className="font-syne text-[min(40px,calc((100vw-40px)/11.8))] leading-[min(44px,calc((100vw-40px)/11.8*1.1))] sm:text-[min(58px,calc((100vw-40px)/11.8))] sm:leading-[min(62px,calc((100vw-40px)/11.8*1.069))] md:text-[min(72px,calc((100vw-64px)/11.8))] md:leading-[min(76px,calc((100vw-64px)/11.8*1.056))] lg:text-[min(84px,calc((100vw-96px)/11.8))] lg:leading-[min(88px,calc((100vw-96px)/11.8*1.048))] font-extrabold uppercase tracking-tight text-[#1b1c1a]">
+        <h1 ref={titleRef} className="font-syne text-[min(40px,calc((100vw-40px)/11.8))] leading-[min(44px,calc((100vw-40px)/11.8*1.1))] sm:text-[min(58px,calc((100vw-40px)/11.8))] sm:leading-[min(62px,calc((100vw-40px)/11.8*1.069))] md:text-[min(72px,calc((100vw-64px)/11.8))] md:leading-[min(76px,calc((100vw-64px)/11.8*1.056))] lg:text-[min(84px,calc((100vw-96px)/11.8))] lg:leading-[min(88px,calc((100vw-96px)/11.8*1.048))] font-extrabold uppercase tracking-tight text-[#1b1c1a]">
           Diseño y desarrollo interfaces que{' '}
           <em className="font-playfair text-[min(46px,calc((100vw-40px)/11.8*1.15))] sm:text-[min(68px,calc((100vw-40px)/11.8*1.172))] md:text-[min(84px,calc((100vw-64px)/11.8*1.167))] lg:text-[min(98px,calc((100vw-96px)/11.8*1.167))] lowercase font-normal text-[#712ae2] not-italic tracking-normal inline-block transform -rotate-1 hover:rotate-0 transition-transform duration-300">
             se sienten

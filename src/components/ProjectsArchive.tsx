@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Project, PROJECTS_ARCHIVE } from '../data/portfolioData';
+import { useTitleReveal } from '../hooks/useTitleReveal';
 
 interface ProjectsArchiveProps {
   onSelectProject: (project: Project) => void;
 }
 
 export const ProjectsArchive: React.FC<ProjectsArchiveProps> = ({ onSelectProject }) => {
+  const titleRef = useTitleReveal<HTMLHeadingElement>();
   const [activeFilter, setActiveFilter] = useState<'all' | 'web' | 'saas' | 'motion' | 'data'>('all');
 
   const filteredProjects = activeFilter === 'all'
@@ -25,7 +27,7 @@ export const ProjectsArchive: React.FC<ProjectsArchiveProps> = ({ onSelectProjec
       {/* Section Header */}
       <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-8 gap-3">
         <div className="flex items-baseline gap-3 flex-wrap">
-          <h2 className="font-syne text-2xl md:text-3xl lg:text-4xl uppercase text-[#1b1c1a] tracking-tight font-bold">
+          <h2 ref={titleRef} className="font-syne text-2xl md:text-3xl lg:text-4xl uppercase text-[#1b1c1a] tracking-tight font-bold">
             ARCHIVO DE PROYECTOS
           </h2>
           <span className="font-mono-code text-xs text-[#712ae2] font-semibold">
