@@ -1,9 +1,12 @@
 import React from 'react';
 import { STACK_CATEGORIES } from '../data/portfolioData';
 import { useTitleReveal } from '../hooks/useTitleReveal';
+import { useStaggerReveal } from '../hooks/useStaggerReveal';
 
 export const TechStack: React.FC = () => {
   const titleRef = useTitleReveal<HTMLHeadingElement>();
+  // Contenido de cada columna, no la columna: su fondo tapa el gris de las líneas de la grilla
+  const gridRef = useStaggerReveal<HTMLDivElement>({ selector: ':scope > * > *', distance: 24 });
   return (
     <section
       id="stack"
@@ -24,7 +27,7 @@ export const TechStack: React.FC = () => {
       </div>
 
       {/* 4 Swiss Grid Columns */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#c4c7c7] border border-[#c4c7c7]">
+      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#c4c7c7] border border-[#c4c7c7]">
         {STACK_CATEGORIES.map((category) => (
           <div
             key={category.index}

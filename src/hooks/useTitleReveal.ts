@@ -50,7 +50,8 @@ export function useTitleReveal<T extends HTMLElement>(
               ease: 'expo.out',
               ...(trigger === 'load'
                 ? { delay: 0.15 }
-                : { scrollTrigger: { trigger: el, start: 'top 88%', once: true } }),
+                : // Apenas asoma: un título quieto en el borde inferior de la pantalla nunca queda oculto
+                  { scrollTrigger: { trigger: el, start: 'top bottom', once: true } }),
               onComplete: () => {
                 revealed.current = true;
               },

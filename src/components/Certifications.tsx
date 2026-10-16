@@ -1,9 +1,11 @@
 import React from 'react';
 import { CERTIFICATIONS_LIST } from '../data/portfolioData';
 import { useTitleReveal } from '../hooks/useTitleReveal';
+import { useStaggerReveal } from '../hooks/useStaggerReveal';
 
 export const Certifications: React.FC = () => {
   const titleRef = useTitleReveal<HTMLHeadingElement>();
+  const gridRef = useStaggerReveal<HTMLDivElement>({ distance: 24 });
   return (
     <section className="w-full px-5 md:px-8 lg:px-12 py-16 md:py-20 border-b border-[#c4c7c7] bg-[#f5f4ef]">
       <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-8 gap-2 border-b border-[#c4c7c7] pb-3">
@@ -21,7 +23,7 @@ export const Certifications: React.FC = () => {
       </div>
 
       {/* Grid of Certifications */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {CERTIFICATIONS_LIST.map((cert, index) => (
           <div
             key={index}

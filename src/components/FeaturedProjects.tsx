@@ -1,6 +1,8 @@
 import React from 'react';
 import { Project, PROJECTS_ARCHIVE } from '../data/portfolioData';
 import { useTitleReveal } from '../hooks/useTitleReveal';
+import { useStaggerReveal } from '../hooks/useStaggerReveal';
+import { useImageParallax } from '../hooks/useImageParallax';
 import { ProjectPreview } from './ProjectPreview';
 
 interface FeaturedProjectsProps {
@@ -9,6 +11,9 @@ interface FeaturedProjectsProps {
 
 export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProject }) => {
   const titleRef = useTitleReveal<HTMLHeadingElement>();
+  // Se anima el contenido de cada card y no la card: su fondo tapa el gris que forma las líneas de la grilla
+  const gridRef = useStaggerReveal<HTMLDivElement>({ selector: ':scope > article > *', distance: 40 });
+  const sectionRef = useImageParallax<HTMLElement>();
   // Only the 6 featured projects from the real projects list
   const featured = PROJECTS_ARCHIVE.filter((p) => p.featured);
   const years = featured.map((p) => p.year);
@@ -18,6 +23,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
 
   return (
     <section
+      ref={sectionRef}
       id="trabajos"
       className="w-full px-5 md:px-8 lg:px-12 py-16 md:py-20 border-b border-[#c4c7c7] bg-[#faf9f5]"
     >
@@ -36,7 +42,7 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
       </div>
 
       {/* 6 Projects in Swiss Editorial Grid (2 columns) */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#c4c7c7] border border-[#c4c7c7]">
+      <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-2 gap-px bg-[#c4c7c7] border border-[#c4c7c7]">
         {featured.map((project, index) => {
           const indexStr = `[0${index + 1}]`;
           return (
@@ -75,21 +81,23 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onSelectProj
                 onClick={() => onSelectProject(project)}
                 className="my-5 overflow-hidden border border-[#c4c7c7] relative aspect-[16/10] bg-[#efeeea] cursor-pointer"
               >
-                <ProjectPreview
-                  project={project}
-                  alt={`${project.title} — ${project.type}`}
-                  imgClassName="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
-                  placeholder={
-                    <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-[#efeeea]">
-                      <span className="font-syne text-2xl font-bold uppercase text-[#1b1c1a] tracking-tight">
-                        {project.title}
-                      </span>
-                      <span className="font-mono-code text-xs text-[#712ae2] mt-1">
-                        {project.type}
-                      </span>
-                    </div>
-                  }
-                />
+                <div data-parallax className="absolute inset-0">
+                  <ProjectPreview
+                    project={project}
+                    alt={`${project.title} — ${project.type}`}
+                    imgClassName="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"
+                    placeholder={
+                      <div className="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-[#efeeea]">
+                        <span className="font-syne text-2xl font-bold uppercase text-[#1b1c1a] tracking-tight">
+                          {project.title}
+                        </span>
+                        <span className="font-mono-code text-xs text-[#712ae2] mt-1">
+                          {project.type}
+                        </span>
+                      </div>
+                    }
+                  />
+                </div>
 
                 {/* Technical Specification Badge */}
                 <div className="absolute bottom-3 left-3 bg-[#1b1c1a]/90 text-white font-mono-code text-[10px] md:text-[11px] px-2.5 py-1 uppercase tracking-wider backdrop-blur-sm">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Project, PROJECTS_ARCHIVE } from '../data/portfolioData';
 import { useTitleReveal } from '../hooks/useTitleReveal';
+import { useStaggerReveal } from '../hooks/useStaggerReveal';
 
 interface ProjectsArchiveProps {
   onSelectProject: (project: Project) => void;
@@ -9,6 +10,7 @@ interface ProjectsArchiveProps {
 export const ProjectsArchive: React.FC<ProjectsArchiveProps> = ({ onSelectProject }) => {
   const titleRef = useTitleReveal<HTMLHeadingElement>();
   const [activeFilter, setActiveFilter] = useState<'all' | 'web' | 'saas' | 'motion' | 'data'>('all');
+  const rowsRef = useStaggerReveal<HTMLDivElement>({ dependencies: [activeFilter], distance: 24 });
 
   const filteredProjects = activeFilter === 'all'
     ? PROJECTS_ARCHIVE
@@ -107,7 +109,7 @@ export const ProjectsArchive: React.FC<ProjectsArchiveProps> = ({ onSelectProjec
         </div>
 
         {/* Rows */}
-        <div className="divide-y divide-[#c4c7c7]">
+        <div ref={rowsRef} className="divide-y divide-[#c4c7c7]">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
