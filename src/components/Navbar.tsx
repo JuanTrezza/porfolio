@@ -36,11 +36,11 @@ export const Navbar: React.FC = () => {
           <a
             href="#"
             onClick={handleAnchorClick}
-            className="font-syne text-lg md:text-xl font-bold tracking-tight text-[#1b1c1a] uppercase hover:opacity-75 transition-opacity"
+            className="font-syne text-[min(18px,calc((100vw-140px)/13.8))] leading-7 md:text-xl font-bold tracking-tight text-[#1b1c1a] uppercase hover:opacity-75 transition-opacity"
           >
             {PORTFOLIO_INFO.name}
           </a>
-          <span className="hidden sm:inline-block font-mono-code text-[11px] px-1.5 py-0.5 border border-[#c4c7c7] text-[#444748] uppercase tracking-wider">
+          <span className="hidden md:inline-block font-mono-code text-[11px] px-1.5 py-0.5 border border-[#c4c7c7] text-[#444748] uppercase tracking-wider">
             {PORTFOLIO_INFO.shortRole}
           </span>
         </div>
@@ -87,7 +87,7 @@ export const Navbar: React.FC = () => {
         {/* Right Status & Indicator */}
         <div className="flex items-center gap-3 shrink-0">
           {/* Status Badge */}
-          <div className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-full border border-[#c4c7c7] bg-[#f5f4ef]">
+          <div className="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-full border border-[#c4c7c7] bg-[#f5f4ef]">
             <span className="w-2 h-2 rounded-full bg-[#712ae2] animate-pulse"></span>
             <span className="font-mono-code text-[10px] md:text-[11px] text-[#1b1c1a] uppercase tracking-wider font-medium">
               {PORTFOLIO_INFO.status}
@@ -95,7 +95,7 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Live BA Time */}
-          <div className="hidden xl:flex items-center px-2.5 py-1 border border-[#c4c7c7] font-mono-code text-[10px] text-[#444748] uppercase tracking-wider">
+          <div className="hidden 2xl:flex items-center px-2.5 py-1 border border-[#c4c7c7] font-mono-code text-[10px] text-[#444748] uppercase tracking-wider">
             BUENOS AIRES {buenosAiresTime || '20:09'} (UTC-3)
           </div>
 

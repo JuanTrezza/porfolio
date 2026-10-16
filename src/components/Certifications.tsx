@@ -5,7 +5,7 @@ export const Certifications: React.FC = () => {
   return (
     <section className="w-full px-5 md:px-8 lg:px-12 py-16 md:py-20 border-b border-[#c4c7c7] bg-[#f5f4ef]">
       <div className="flex flex-col md:flex-row md:items-baseline justify-between mb-8 gap-2 border-b border-[#c4c7c7] pb-3">
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
           <span className="font-mono-code text-[11px] text-[#712ae2] font-semibold uppercase">
             04 // VALIDACIÓN
           </span>

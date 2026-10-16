@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
       <div className="w-full px-5 md:px-8 lg:px-12 pt-14 md:pt-20 pb-10">
         {/* Giant Monogram / Wordmark */}
         <div className="w-full border-b border-[#c4c7c7] pb-8 md:pb-12 mb-8 md:mb-12">
-          <h1 className="font-syne text-[80px] sm:text-[110px] md:text-[140px] lg:text-[180px] font-extrabold uppercase tracking-tighter text-[#1b1c1a] select-none leading-none overflow-hidden text-center lg:text-left">
+          <h1 className="font-syne text-[min(80px,calc((100vw-40px)/3.62))] sm:text-[110px] md:text-[140px] lg:text-[180px] font-extrabold uppercase tracking-tighter text-[#1b1c1a] select-none leading-none overflow-hidden text-center lg:text-left">
             {PORTFOLIO_INFO.initials}
           </h1>
         </div>
