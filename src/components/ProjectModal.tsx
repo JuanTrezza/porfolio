@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Project } from '../data/portfolioData';
 import { ProjectPreview } from './ProjectPreview';
+import { useLenisLock } from '../hooks/useLenisLock';
 
 interface ProjectModalProps {
   project: Project | null;
@@ -8,6 +9,8 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  useLenisLock(project !== null);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -45,7 +48,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </div>
 
         {/* Content Body */}
-        <div className="p-6 md:p-8 overflow-y-auto flex flex-col gap-6">
+        <div data-lenis-prevent className="p-6 md:p-8 overflow-y-auto flex flex-col gap-6">
           {/* Project Image Preview */}
           <div className="overflow-hidden border border-[#c4c7c7] aspect-[16/9] bg-[#efeeea]">
             <ProjectPreview

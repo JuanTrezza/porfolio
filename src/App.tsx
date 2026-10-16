@@ -10,9 +10,11 @@ import { ContactCTA } from './components/ContactCTA';
 import { Footer } from './components/Footer';
 import { ProjectModal } from './components/ProjectModal';
 import { Project } from './data/portfolioData';
+import { useSmoothScroll } from './hooks/useSmoothScroll';
 
 export default function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  useSmoothScroll();
 
   return (
     <div className="min-h-screen bg-[#faf9f5] text-[#1b1c1a] font-inter selection:bg-[#712ae2] selection:text-white flex flex-col">

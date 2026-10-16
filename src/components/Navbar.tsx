@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { PORTFOLIO_INFO } from '../data/portfolioData';
+import { useLenisLock } from '../hooks/useLenisLock';
+import { handleAnchorClick } from '../lib/scroll';
 
 export const Navbar: React.FC = () => {
   const [buenosAiresTime, setBuenosAiresTime] = useState<string>('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
+  useLenisLock(mobileMenuOpen);
 
   useEffect(() => {
     const updateTime = () => {
@@ -32,6 +35,7 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center gap-2 shrink-0">
           <a
             href="#"
+            onClick={handleAnchorClick}
             className="font-syne text-lg md:text-xl font-bold tracking-tight text-[#1b1c1a] uppercase hover:opacity-75 transition-opacity"
           >
             {PORTFOLIO_INFO.name}
@@ -45,30 +49,35 @@ export const Navbar: React.FC = () => {
         <nav className="hidden lg:flex items-center gap-8">
           <a
             href="#trabajos"
+            onClick={handleAnchorClick}
             className="font-mono-code text-xs uppercase tracking-wider text-[#1b1c1a] font-semibold hover:text-[#712ae2] transition-colors"
           >
             TRABAJOS
           </a>
           <a
             href="#archivo"
+            onClick={handleAnchorClick}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] hover:text-[#1b1c1a] transition-colors"
           >
             ARCHIVO
           </a>
           <a
             href="#sobre-mi"
+            onClick={handleAnchorClick}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] hover:text-[#1b1c1a] transition-colors"
           >
             SOBRE MÍ
           </a>
           <a
             href="#stack"
+            onClick={handleAnchorClick}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] hover:text-[#1b1c1a] transition-colors"
           >
             STACK
           </a>
           <a
             href="#contacto"
+            onClick={handleAnchorClick}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] hover:text-[#1b1c1a] transition-colors"
           >
             CONTACTO
@@ -93,6 +102,7 @@ export const Navbar: React.FC = () => {
           {/* User Monogram Avatar */}
           <a
             href="#sobre-mi"
+            onClick={handleAnchorClick}
             aria-label="Perfil Sobre Mí"
             className="w-8 h-8 rounded-full bg-[#1b1c1a] text-white flex items-center justify-center font-mono-code text-xs font-semibold hover:bg-[#712ae2] transition-colors"
           >
@@ -123,35 +133,35 @@ export const Navbar: React.FC = () => {
           </div>
           <a
             href="#trabajos"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleAnchorClick(e, () => setMobileMenuOpen(false))}
             className="font-mono-code text-xs uppercase tracking-wider text-[#1b1c1a] font-semibold py-1"
           >
             01 // TRABAJOS DESTACADOS
           </a>
           <a
             href="#archivo"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleAnchorClick(e, () => setMobileMenuOpen(false))}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] py-1"
           >
             02 // ARCHIVO DE PROYECTOS
           </a>
           <a
             href="#sobre-mi"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleAnchorClick(e, () => setMobileMenuOpen(false))}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] py-1"
           >
             03 // SOBRE MÍ
           </a>
           <a
             href="#stack"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleAnchorClick(e, () => setMobileMenuOpen(false))}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] py-1"
           >
             04 // STACK TECNOLÓGICO
           </a>
           <a
             href="#contacto"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleAnchorClick(e, () => setMobileMenuOpen(false))}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] py-1"
           >
             05 // CONTACTO

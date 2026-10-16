@@ -1,5 +1,6 @@
 import React from 'react';
 import { PORTFOLIO_INFO } from '../data/portfolioData';
+import { handleAnchorClick } from '../lib/scroll';
 
 export const Hero: React.FC = () => {
   return (
@@ -40,6 +41,7 @@ export const Hero: React.FC = () => {
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <a
               href="#trabajos"
+              onClick={handleAnchorClick}
               className="px-5 py-3 bg-[#1b1c1a] text-white font-mono-code text-xs uppercase tracking-wider hover:bg-[#712ae2] transition-colors duration-150 inline-flex items-center gap-2 group"
             >
               <span>EXPLORAR TRABAJOS</span>
@@ -49,6 +51,7 @@ export const Hero: React.FC = () => {
             </a>
             <a
               href="#contacto"
+              onClick={handleAnchorClick}
               className="px-5 py-3 border border-[#1b1c1a] text-[#1b1c1a] font-mono-code text-xs uppercase tracking-wider hover:bg-[#1b1c1a] hover:text-white transition-colors duration-150 inline-flex items-center gap-1"
             >
               CONTACTAR
@@ -67,6 +70,7 @@ export const Hero: React.FC = () => {
         </span>
         <a
           href="#trabajos"
+          onClick={handleAnchorClick}
           className="flex items-center gap-2 hover:text-[#712ae2] transition-colors"
         >
           <span>SCROLL DOWN</span>
