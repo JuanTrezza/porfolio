@@ -1,6 +1,10 @@
 import orbitaPreview from '../assets/images/orbita-studio.png';
 import senalPreview from '../assets/images/senal-agency.png';
 import kortexPreview from '../assets/images/kortex-records.png';
+import nexusGamesPreview from '../assets/images/nexus-games.png';
+import pulsePreview from '../assets/images/pulse-analytics.png';
+import cinemaxPreview from '../assets/images/cinemax-pro.png';
+import photo from '../assets/images/foto.png';
 
 export interface Project {
   id: string;
@@ -64,7 +68,7 @@ export const PORTFOLIO_INFO = {
   folioIndex: "INDEX FOLIO 04.26",
   // CV en public/: se abre directo en el navegador
   cvUrl: `${import.meta.env.BASE_URL}CV_Juan_Moreno_Trezza.pdf`,
-  photoUrl: `${import.meta.env.BASE_URL}foto.png`,
+  photoUrl: photo,
   links: {
     github: "https://github.com/JuanTrezza",
     linkedin: "https://www.linkedin.com/in/juanmorenotrezza",
@@ -137,9 +141,6 @@ export const STACK_CATEGORIES: StackCategory[] = [
   },
 ];
 
-// Capturas en public/. Si falta el archivo, la card muestra el título como placeholder.
-const SHOTS = import.meta.env.BASE_URL;
-
 // Archivo completo de proyectos reales. Los 6 con featured: true se muestran
 // como destacados, en este mismo orden.
 export const PROJECTS_ARCHIVE: Project[] = [
@@ -202,7 +203,7 @@ export const PROJECTS_ARCHIVE: Project[] = [
     category: "web",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite", "RAWG.io API"],
     spec: "RAWG API · SEARCH & WISHLIST",
-    image: `${SHOTS}nexus-games.png`,
+    image: nexusGamesPreview,
   },
   {
     id: "pulse-analytics",
@@ -217,7 +218,7 @@ export const PROJECTS_ARCHIVE: Project[] = [
     category: "saas",
     tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     spec: "E-COMMERCE ANALYTICS · DASHBOARD",
-    image: `${SHOTS}pulse-analytics.png`,
+    image: pulsePreview,
   },
   {
     id: "cinemaxpro",
@@ -232,7 +233,7 @@ export const PROJECTS_ARCHIVE: Project[] = [
     category: "web",
     tags: ["React", "TypeScript", "TMDb API", "Framer Motion"],
     spec: "TMDB API · SEARCH & FAVORITES",
-    image: `${SHOTS}cinemax-pro.png`,
+    image: cinemaxPreview,
   },
 
   // ── Archivo ──

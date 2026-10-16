@@ -23,8 +23,8 @@ npm run dev   # http://localhost:3000/porfolio/
 src/
 ├── components/   # secciones, navbar, footer y modal de proyecto
 ├── data/         # portfolioData.ts: todo el contenido (proyectos, formación, stack, certificaciones)
-└── assets/       # capturas de los proyectos destacados
-public/           # foto.png y CV_Juan_Moreno_Trezza.pdf
+└── assets/       # capturas de los proyectos destacados y foto
+public/           # CV_Juan_Moreno_Trezza.pdf
 ```
 
 Para editar contenido, todo está en `src/data/portfolioData.ts`. Los proyectos con `featured: true` se muestran como destacados, en el orden del archivo.
