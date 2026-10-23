@@ -74,6 +74,22 @@ test('con reduced motion ningún título se parte', async ({ page }, info) => {
   expect(await page.locator('.reveal-word').count()).toBe(0);
 });
 
+/** Posición de cada palabra del título (funciona partido o sin partir) */
+function wordPositions(el: Element) {
+  const out: { text: string; x: number; y: number }[] = [];
+  const range = document.createRange();
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+  for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+    for (const m of (t.textContent ?? '').matchAll(/S+/g)) {
+      range.setStart(t, m.index!);
+      range.setEnd(t, m.index! + m[0].length);
+      const r = range.getBoundingClientRect();
+      out.push({ text: m[0], x: r.left, y: r.top });
+    }
+  }
+  return out;
+}
+
 test('cada título revelado es idéntico al original sin partir', async ({ page, browser }, info) => {
   test.skip(info.project.name === 'reduced', 'es la referencia');
   const { viewport, isMobile, hasTouch } = info.project.use;
@@ -82,19 +98,27 @@ test('cada título revelado es idéntico al original sin partir', async ({ page,
   await Promise.all([page.goto('./', { waitUntil: 'networkidle' }), ref.goto('./', { waitUntil: 'networkidle' })]);
 
   for (const [name, selector] of TITLES) {
-    const shots = [];
+    const shots: Buffer[] = [];
+    const words: ReturnType<typeof wordPositions>[] = [];
     for (const p of [page, ref]) {
       const el = p.locator(selector).first();
       await el.evaluate((e) => window.scrollTo(0, e.getBoundingClientRect().top + window.scrollY - 200));
       await settle();
       shots.push(await el.screenshot());
+      words.push(await el.evaluate(wordPositions));
+    }
+    // "STACK TECNOLÓGICO": Syne ajusta el kerning entre el espacio y la "T"; al partir en palabras
+    // ese ajuste se pierde y "TECNOLÓGICO" se corre 1–1,5 px. Es el único título afectado: para él
+    // se acota el corrimiento de cada palabra en vez de exigir píxeles idénticos.
+    if (name === 'stack') {
+      const shift = Math.max(...words[0].map((w, i) => Math.max(Math.abs(w.x - words[1][i].x), Math.abs(w.y - words[1][i].y))));
+      expect(words[0].map((w) => w.text)).toEqual(words[1].map((w) => w.text));
+      expect(shift, `${name}: corrimiento máximo de una palabra`).toBeLessThanOrEqual(2);
+      continue;
     }
     const d = diffPercent(shots[0], shots[1]);
-    // "STACK TECNOLÓGICO": Syne ajusta el kerning entre el espacio y la "T"; al partir en palabras
-    // ese ajuste se pierde y "TECNOLÓGICO" se corre 1–1,5 px. Es el único título afectado.
-    const known = name === 'stack';
-    expect(d.sizeDelta, `${name}: tamaño`).toBeLessThanOrEqual(known ? 1 : 0);
-    expect(d.percent, `${name}: ${d.pixels} px distintos`).toBeLessThanOrEqual(known ? 2 : 0.2);
+    expect(d.sizeDelta, `${name}: tamaño`).toBe(0);
+    expect(d.percent, `${name}: ${d.pixels} px distintos`).toBeLessThanOrEqual(0.2);
   }
   await refCtx.close();
 });

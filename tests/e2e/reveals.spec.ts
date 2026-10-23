@@ -98,13 +98,13 @@ test('archivo: al filtrar, la entrada se repite y las filas quedan visibles', as
 
   await page.locator('#archivo button', { hasText: 'TODOS' }).click();
   await wait(300);
-  for (let i = 0; i < 16; i += 3) {
+  for (let i = 0; i < 17; i += 3) {
     await page.locator(GROUPS.archivo).nth(i).evaluate((e) => window.scrollTo(0, e.getBoundingClientRect().top + window.scrollY - 300));
     await wait(250);
   }
   await wait(1500);
   const all = await opacities(page, GROUPS.archivo);
-  expect(all).toHaveLength(16);
+  expect(all).toHaveLength(17);
   expect(all.every((o) => o === 1)).toBe(true);
 });
 
@@ -122,7 +122,7 @@ test('en reposo, cada bloque queda idéntico al diseño', async ({ page, browser
     ['certificaciones', 'section:has(span:text-is("04 // VALIDACIÓN")) div.grid'],
   ];
   for (const [name, selector] of blocks) {
-    const shots = [];
+    const shots: Buffer[] = [];
     for (const p of [page, ref]) {
       const el = p.locator(selector).first();
       const h = await el.evaluate((e) => e.getBoundingClientRect().height);

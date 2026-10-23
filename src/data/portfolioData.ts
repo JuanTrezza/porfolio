@@ -4,6 +4,7 @@ import kortexPreview from '../assets/images/kortex-records.png';
 import nexusGamesPreview from '../assets/images/nexus-games.png';
 import pulsePreview from '../assets/images/pulse-analytics.png';
 import cinemaxPreview from '../assets/images/cinemax-pro.png';
+import tonoPreview from '../assets/images/tono.png';
 import photo from '../assets/images/foto.png';
 
 export interface Project {
@@ -131,7 +132,7 @@ export const STACK_CATEGORIES: StackCategory[] = [
     title: "DATOS & BACKEND",
     index: "03",
     subtitle: "DATA & SERVICES",
-    skills: ["Python", "Power BI", "Excel", "MySQL", "Firebase", "REST APIs"],
+    skills: ["Python", "Power BI", "Excel", "MySQL", "Firebase", "Cloudflare Workers", "Gemini API", "REST APIs"],
   },
   {
     title: "HERRAMIENTAS",
@@ -145,6 +146,21 @@ export const STACK_CATEGORIES: StackCategory[] = [
 // como destacados, en este mismo orden.
 export const PROJECTS_ARCHIVE: Project[] = [
   // ── Destacados ──
+  {
+    id: "tono",
+    year: 2026,
+    title: "TONO",
+    type: "Aplicación web con IA",
+    link: "https://juantrezza.github.io/tono-ai/",
+    codeLink: "https://github.com/JuanTrezza/tono-ai",
+    description:
+      "Generador de posts para redes sociales con IA. Elegís la red, el tono y el tema, y Gemini escribe tres versiones en tiempo real.",
+    featured: true,
+    category: "saas",
+    tags: ["React 19", "TypeScript", "Tailwind CSS", "Vite", "Cloudflare Workers", "Gemini API"],
+    spec: "GEMINI API · STREAMING · WORKERS",
+    image: tonoPreview,
+  },
   {
     id: "orbita-studio",
     year: 2026,
@@ -206,21 +222,6 @@ export const PROJECTS_ARCHIVE: Project[] = [
     image: nexusGamesPreview,
   },
   {
-    id: "pulse-analytics",
-    year: 2026,
-    title: "PULSE Analytics",
-    type: "Dashboard",
-    link: "https://juantrezza.github.io/pulse-analytics/",
-    codeLink: "https://github.com/JuanTrezza/pulse-analytics",
-    description:
-      "Dashboard de analytics para e-commerce con métricas en tiempo real, visualización de ventas, embudo de conversión y segmentación de clientes. Diseño inspirado en Linear y Vercel.",
-    featured: true,
-    category: "saas",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    spec: "E-COMMERCE ANALYTICS · DASHBOARD",
-    image: pulsePreview,
-  },
-  {
     id: "cinemaxpro",
     year: 2026,
     title: "CINEMAX PRO",
@@ -237,6 +238,21 @@ export const PROJECTS_ARCHIVE: Project[] = [
   },
 
   // ── Archivo ──
+  {
+    id: "pulse-analytics",
+    year: 2026,
+    title: "PULSE Analytics",
+    type: "Dashboard",
+    link: "https://juantrezza.github.io/pulse-analytics/",
+    codeLink: "https://github.com/JuanTrezza/pulse-analytics",
+    description:
+      "Dashboard de analytics para e-commerce con métricas en tiempo real, visualización de ventas, embudo de conversión y segmentación de clientes. Diseño inspirado en Linear y Vercel.",
+    featured: false,
+    category: "saas",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    spec: "E-COMMERCE ANALYTICS · DASHBOARD",
+    image: pulsePreview,
+  },
   {
     id: "mesa",
     year: 2026,
