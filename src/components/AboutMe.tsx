@@ -10,7 +10,7 @@ export const AboutMe: React.FC = () => {
       {/* Section Title */}
       <div className="flex items-center gap-3 mb-10">
         <span className="font-mono-code text-[11px] text-[#712ae2] font-semibold uppercase">
-          02 // PERFIL Y TRAYECTORIA
+          03 // PERFIL Y TRAYECTORIA
         </span>
         <div className="h-px bg-[#c4c7c7] flex-1"></div>
       </div>

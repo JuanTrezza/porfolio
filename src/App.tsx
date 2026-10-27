@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { FeaturedProjects } from './components/FeaturedProjects';
+import { DesignProjects } from './components/DesignProjects';
 import { ProjectsArchive } from './components/ProjectsArchive';
 import { AboutMe } from './components/AboutMe';
 import { TechStack } from './components/TechStack';
@@ -29,19 +30,22 @@ export default function App() {
         {/* 01 // Selección Curada: Featured Projects */}
         <FeaturedProjects onSelectProject={(project) => setSelectedProject(project)} />
 
+        {/* 02 // Diseño UI: casos de UX/UI y branding */}
+        <DesignProjects />
+
         {/* Archivo de Proyectos */}
         <ProjectsArchive onSelectProject={(project) => setSelectedProject(project)} />
 
-        {/* 02 // Perfil y Trayectoria: Sobre Mí */}
+        {/* 03 // Perfil y Trayectoria: Sobre Mí */}
         <AboutMe />
 
-        {/* 03 // Toolkit & Capacidades: Stack Tecnológico */}
+        {/* 04 // Toolkit & Capacidades: Stack Tecnológico */}
         <TechStack />
 
-        {/* 04 // Validación: Certificaciones */}
+        {/* 05 // Validación: Certificaciones */}
         <Certifications />
 
-        {/* 05 // Iniciar Conversación: Contact CTA */}
+        {/* 06 // Iniciar Conversación: Contact CTA */}
         <ContactCTA />
       </main>
 

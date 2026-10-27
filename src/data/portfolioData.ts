@@ -5,6 +5,9 @@ import nexusGamesPreview from '../assets/images/nexus-games.png';
 import pulsePreview from '../assets/images/pulse-analytics.png';
 import cinemaxPreview from '../assets/images/cinemax-pro.png';
 import tonoPreview from '../assets/images/tono.png';
+import ecovidaPreview from '../assets/images/ecovida.jpg';
+import pulsoWebPreview from '../assets/images/pulso-web.jpg';
+import pulsoNewsletterPreview from '../assets/images/pulso-newsletter.jpg';
 import photo from '../assets/images/foto.png';
 
 export interface Project {
@@ -14,9 +17,11 @@ export interface Project {
   type: string;
   link?: string;
   codeLink?: string;
+  behanceLink?: string; // Solo proyectos de diseño
+  figmaLink?: string; // Solo proyectos de diseño
   description: string;
   featured: boolean;
-  category: 'web' | 'saas' | 'motion' | 'data';
+  category: 'web' | 'saas' | 'motion' | 'data' | 'diseño';
   tags: string[];
   spec: string;
   image?: string;
@@ -59,6 +64,7 @@ export const PORTFOLIO_INFO = {
   role: "FRONTEND DEVELOPER",
   email: "jgmorenotrezza@gmail.com",
   status: "DISPONIBLE PARA TRABAJAR", // Sin trimestres
+  availability: "BUENOS AIRES / REMOTO",
   location: "BUENOS AIRES [34.6037° S, 58.3816° W]",
   locationShort: "34.6037° S, 58.3816° W · ARGENTINA",
   heroSubtitle:
@@ -392,5 +398,54 @@ export const PROJECTS_ARCHIVE: Project[] = [
     category: "data",
     tags: ["Python", "Rich", "JSON", "Logging"],
     spec: "PYTHON CLI · JSON PERSISTENCE",
+  },
+
+  // ── Diseño UI ──
+  // Tienen su propia sección (DesignProjects) y no se listan en el archivo.
+  {
+    id: "ecovida",
+    year: 2026,
+    title: "EcoVida",
+    type: "App de reciclaje",
+    behanceLink: "https://www.behance.net/gallery/257646471/EcoVida-Recycling-App-UXUI-Case-Study",
+    figmaLink: "https://www.figma.com/community/file/1696601137125766148",
+    description:
+      "Caso de UX/UI: wireframes, 13 pantallas y componentes con Atomic Design.",
+    featured: false,
+    category: "diseño",
+    tags: ["Figma"],
+    spec: "UX/UI · 13 PANTALLAS · ATOMIC DESIGN",
+    image: ecovidaPreview,
+  },
+  {
+    id: "pulso-sports",
+    year: 2026,
+    title: "PULSO Sports",
+    type: "Branding y e-commerce",
+    behanceLink: "https://www.behance.net/gallery/257646671/PULSO-Sports-Brand-E-commerce-Catalog-Ads",
+    figmaLink: "https://www.figma.com/community/file/1695483368918567726",
+    description:
+      "Branding, e-commerce, catálogo impreso de 8 páginas y campaña de banners para una marca deportiva ficticia.",
+    featured: false,
+    category: "diseño",
+    tags: ["Figma", "Figma AI"],
+    spec: "BRANDING · E-COMMERCE · PRINT",
+    image: pulsoWebPreview,
+  },
+  {
+    id: "pulso-newsletter",
+    year: 2026,
+    title: "PULSO Newsletter",
+    type: "Email marketing",
+    // El newsletter está incluido en el caso de PULSO Sports en Behance
+    behanceLink: "https://www.behance.net/gallery/257646671/PULSO-Sports-Brand-E-commerce-Catalog-Ads",
+    figmaLink: "https://www.figma.com/community/file/1696607983796080673",
+    description:
+      "Email promocional de Cyber Week en versión desktop (600 px) y mobile (375 px).",
+    featured: false,
+    category: "diseño",
+    tags: ["Figma"],
+    spec: "DESKTOP 600 PX · MOBILE 375 PX",
+    image: pulsoNewsletterPreview,
   },
 ];

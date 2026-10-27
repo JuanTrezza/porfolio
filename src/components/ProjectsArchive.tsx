@@ -3,6 +3,9 @@ import { Project, PROJECTS_ARCHIVE } from '../data/portfolioData';
 import { useTitleReveal } from '../hooks/useTitleReveal';
 import { useStaggerReveal } from '../hooks/useStaggerReveal';
 
+// Los proyectos de diseño tienen su propia sección
+const ARCHIVE = PROJECTS_ARCHIVE.filter((p) => p.category !== 'diseño');
+
 interface ProjectsArchiveProps {
   onSelectProject: (project: Project) => void;
 }
@@ -13,11 +16,11 @@ export const ProjectsArchive: React.FC<ProjectsArchiveProps> = ({ onSelectProjec
   const rowsRef = useStaggerReveal<HTMLDivElement>({ dependencies: [activeFilter], distance: 24 });
 
   const filteredProjects = activeFilter === 'all'
-    ? PROJECTS_ARCHIVE
-    : PROJECTS_ARCHIVE.filter((p) => p.category === activeFilter);
+    ? ARCHIVE
+    : ARCHIVE.filter((p) => p.category === activeFilter);
 
   // Compute minimum and maximum year dynamically from projects
-  const years = PROJECTS_ARCHIVE.map((p) => p.year);
+  const years = ARCHIVE.map((p) => p.year);
   const minYear = Math.min(...years);
   const maxYear = Math.max(...years);
 
@@ -39,7 +42,7 @@ export const ProjectsArchive: React.FC<ProjectsArchiveProps> = ({ onSelectProjec
 
         {/* Real Count of Projects */}
         <span className="font-mono-code text-xs text-[#444748] px-3 py-1.5 border border-[#c4c7c7] bg-[#faf9f5] self-start md:self-auto font-medium">
-          ({PROJECTS_ARCHIVE.length} PROYECTOS REGISTRADOS)
+          ({ARCHIVE.length} PROYECTOS REGISTRADOS)
         </span>
       </div>
 
@@ -53,7 +56,7 @@ export const ProjectsArchive: React.FC<ProjectsArchiveProps> = ({ onSelectProjec
               : 'bg-[#faf9f5] text-[#444748] border-[#c4c7c7] hover:border-[#1b1c1a]'
           }`}
         >
-          TODOS ({PROJECTS_ARCHIVE.length})
+          TODOS ({ARCHIVE.length})
         </button>
         <button
           onClick={() => setActiveFilter('web')}
@@ -63,7 +66,7 @@ export const ProjectsArchive: React.FC<ProjectsArchiveProps> = ({ onSelectProjec
               : 'bg-[#faf9f5] text-[#444748] border-[#c4c7c7] hover:border-[#1b1c1a]'
           }`}
         >
-          WEB & LANDINGS ({PROJECTS_ARCHIVE.filter((p) => p.category === 'web').length})
+          WEB & LANDINGS ({ARCHIVE.filter((p) => p.category === 'web').length})
         </button>
         <button
           onClick={() => setActiveFilter('saas')}
@@ -73,7 +76,7 @@ export const ProjectsArchive: React.FC<ProjectsArchiveProps> = ({ onSelectProjec
               : 'bg-[#faf9f5] text-[#444748] border-[#c4c7c7] hover:border-[#1b1c1a]'
           }`}
         >
-          SAAS & APPS ({PROJECTS_ARCHIVE.filter((p) => p.category === 'saas').length})
+          SAAS & APPS ({ARCHIVE.filter((p) => p.category === 'saas').length})
         </button>
         <button
           onClick={() => setActiveFilter('motion')}
@@ -83,7 +86,7 @@ export const ProjectsArchive: React.FC<ProjectsArchiveProps> = ({ onSelectProjec
               : 'bg-[#faf9f5] text-[#444748] border-[#c4c7c7] hover:border-[#1b1c1a]'
           }`}
         >
-          MOTION & 3D ({PROJECTS_ARCHIVE.filter((p) => p.category === 'motion').length})
+          MOTION & 3D ({ARCHIVE.filter((p) => p.category === 'motion').length})
         </button>
         <button
           onClick={() => setActiveFilter('data')}
@@ -93,7 +96,7 @@ export const ProjectsArchive: React.FC<ProjectsArchiveProps> = ({ onSelectProjec
               : 'bg-[#faf9f5] text-[#444748] border-[#c4c7c7] hover:border-[#1b1c1a]'
           }`}
         >
-          PYTHON & DATOS ({PROJECTS_ARCHIVE.filter((p) => p.category === 'data').length})
+          PYTHON & DATOS ({ARCHIVE.filter((p) => p.category === 'data').length})
         </button>
       </div>
 

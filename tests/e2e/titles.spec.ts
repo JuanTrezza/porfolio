@@ -5,9 +5,10 @@ import { diffPercent, expect, settle, test, wait } from './helpers';
 const TITLES: [string, string][] = [
   ['hero', 'main section:first-child h1'],
   ['destacados', '#trabajos h2'],
+  ['diseño', '#diseno h2'],
   ['archivo', '#archivo h2'],
   ['stack', '#stack h2'],
-  ['certificaciones', 'section:has(span:text-is("04 // VALIDACIÓN")) h2'],
+  ['certificaciones', 'section:has(span:text-is("05 // VALIDACIÓN")) h2'],
   ['contacto', '#contacto h2'],
 ];
 

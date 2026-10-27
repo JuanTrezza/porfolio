@@ -34,10 +34,10 @@ test('menú mobile: pausa Lenis, el link lo cierra y lleva a la sección', async
   await wait(300);
   expect((await lenisState(page)).stopped).toBe(true);
 
-  await page.locator('header a:has-text("04 // STACK")').tap();
+  await page.locator('header a:has-text("05 // STACK")').tap();
   await settle();
   expect((await lenisState(page)).stopped).toBe(false);
-  expect(await page.locator('header a:has-text("04 // STACK")').count()).toBe(0);
+  expect(await page.locator('header a:has-text("05 // STACK")').count()).toBe(0);
   expect(Math.abs((await sectionTop(page, 'stack')) - 64)).toBeLessThanOrEqual(3);
 });
 

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>JM — Juan Moreno Trezza</title>
+  <rect width="32" height="32" rx="7" fill="#1b1c1a"/>
+  <path fill="#712ae2" d="M9 8H13V19A5 5 0 0 1 8 24H4V20H8A1 1 0 0 0 9 19Z"/>
+  <path fill="#712ae2" d="M15 24V8H19L21.5 13.5L24 8H28V24H24V16.5L21.5 21.5L19 16.5V24Z"/>
+</svg>

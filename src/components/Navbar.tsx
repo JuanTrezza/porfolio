@@ -55,6 +55,13 @@ export const Navbar: React.FC = () => {
             TRABAJOS
           </a>
           <a
+            href="#diseno"
+            onClick={handleAnchorClick}
+            className="font-mono-code text-xs uppercase tracking-wider text-[#444748] hover:text-[#1b1c1a] transition-colors"
+          >
+            DISEÑO
+          </a>
+          <a
             href="#archivo"
             onClick={handleAnchorClick}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] hover:text-[#1b1c1a] transition-colors"
@@ -84,16 +91,8 @@ export const Navbar: React.FC = () => {
           </a>
         </nav>
 
-        {/* Right Status & Indicator */}
+        {/* Right Indicator */}
         <div className="flex items-center gap-3 shrink-0">
-          {/* Status Badge */}
-          <div className="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-full border border-[#c4c7c7] bg-[#f5f4ef]">
-            <span className="w-2 h-2 rounded-full bg-[#712ae2] animate-pulse"></span>
-            <span className="font-mono-code text-[10px] md:text-[11px] text-[#1b1c1a] uppercase tracking-wider font-medium">
-              {PORTFOLIO_INFO.status}
-            </span>
-          </div>
-
           {/* Live BA Time */}
           <div className="hidden 2xl:flex items-center px-2.5 py-1 border border-[#c4c7c7] font-mono-code text-[10px] text-[#444748] uppercase tracking-wider">
             BUENOS AIRES {buenosAiresTime || '20:09'} (UTC-3)
@@ -139,32 +138,39 @@ export const Navbar: React.FC = () => {
             01 // TRABAJOS DESTACADOS
           </a>
           <a
+            href="#diseno"
+            onClick={(e) => handleAnchorClick(e, () => setMobileMenuOpen(false))}
+            className="font-mono-code text-xs uppercase tracking-wider text-[#444748] py-1"
+          >
+            02 // DISEÑO UI
+          </a>
+          <a
             href="#archivo"
             onClick={(e) => handleAnchorClick(e, () => setMobileMenuOpen(false))}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] py-1"
           >
-            02 // ARCHIVO DE PROYECTOS
+            03 // ARCHIVO DE PROYECTOS
           </a>
           <a
             href="#sobre-mi"
             onClick={(e) => handleAnchorClick(e, () => setMobileMenuOpen(false))}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] py-1"
           >
-            03 // SOBRE MÍ
+            04 // SOBRE MÍ
           </a>
           <a
             href="#stack"
             onClick={(e) => handleAnchorClick(e, () => setMobileMenuOpen(false))}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] py-1"
           >
-            04 // STACK TECNOLÓGICO
+            05 // STACK TECNOLÓGICO
           </a>
           <a
             href="#contacto"
             onClick={(e) => handleAnchorClick(e, () => setMobileMenuOpen(false))}
             className="font-mono-code text-xs uppercase tracking-wider text-[#444748] py-1"
           >
-            05 // CONTACTO
+            06 // CONTACTO
           </a>
         </div>
       )}

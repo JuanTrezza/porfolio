@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Juan Moreno Trezza</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#faf9f5" />
+    <!-- Rutas absolutas: GitHub Pages sirve esta página en cualquier URL inexistente, a cualquier profundidad -->
+    <link rel="icon" type="image/svg+xml" href="/porfolio/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/porfolio/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/porfolio/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;600&family=Playfair+Display&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #faf9f5;
+        --surface-low: #f5f4ef;
+        --ink: #1b1c1a;
+        --ink-variant: #444748;
+        --outline: #c4c7c7;
+        --accent: #712ae2;
+        --gutter: clamp(20px, 4vw, 48px);
+      }
+      * { box-sizing: border-box; margin: 0; }
+      html { background: var(--bg); color: var(--ink); }
+      body {
+        min-height: 100vh;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      ::selection { background: var(--accent); color: #fff; }
+      .mono {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      header {
+        height: 64px;
+        padding: 0 var(--gutter);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-bottom: 1px solid var(--outline);
+      }
+      .brand {
+        font-family: 'Syne', sans-serif;
+        font-weight: 700;
+        font-size: clamp(15px, 4vw, 20px);
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .brand:hover { opacity: 0.75; }
+      main {
+        flex: 1;
+        padding: clamp(48px, 8vw, 96px) var(--gutter);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 24px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--outline);
+        color: var(--ink-variant);
+      }
+      .meta strong { color: var(--accent); font-weight: 600; }
+      h1 {
+        font-family: 'Syne', sans-serif;
+        font-weight: 800;
+        /* Syne es muy ancha: el tamaño se ajusta al ancho para que "404" entre en una línea */
+        font-size: clamp(72px, 27vw, 320px);
+        line-height: 0.9;
+        letter-spacing: -0.05em;
+        white-space: nowrap;
+        margin: clamp(24px, 4vw, 48px) 0 clamp(20px, 3.5vw, 40px);
+      }
+      h1 em {
+        font-family: 'Playfair Display', serif;
+        font-style: normal;
+        font-weight: 400;
+        color: var(--accent);
+        letter-spacing: 0;
+        font-variant-numeric: lining-nums;
+        display: inline-block;
+        transform: rotate(-2deg);
+      }
+      .lead {
+        font-family: 'Syne', sans-serif;
+        font-weight: 700;
+        font-size: clamp(24px, 5vw, 44px);
+        line-height: 1.1;
+        text-transform: uppercase;
+        letter-spacing: -0.02em;
+      }
+      .sub {
+        margin-top: 12px;
+        max-width: 36rem;
+        font-size: clamp(15px, 2vw, 17px);
+        line-height: 1.6;
+        color: var(--ink-variant);
+      }
+      .cta {
+        margin-top: 32px;
+        align-self: flex-start;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 20px;
+        background: var(--ink);
+        color: #fff;
+        text-decoration: none;
+        font-size: 12px;
+        transition: background-color 150ms;
+      }
+      .cta:hover, .cta:focus-visible { background: var(--accent); }
+      .cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+      footer {
+        padding: 16px var(--gutter);
+        border-top: 1px solid var(--outline);
+        background: var(--surface-low);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 8px 24px;
+        color: var(--ink-variant);
+      }
+      .header-tag { color: var(--ink-variant); white-space: nowrap; }
+      @media (max-width: 359px) {
+        .header-tag { display: none; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cta { transition: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/porfolio/">Juan Moreno Trezza</a>
+      <span class="mono header-tag">Error // 404</span>
+    </header>
+
+    <main>
+      <div class="meta mono">
+        <span><strong>[STATUS]</strong> Página no encontrada</span>
+        <span>Buenos Aires · Argentina</span>
+      </div>
+
+      <h1 aria-label="404">4<em>0</em>4</h1>
+
+      <p class="lead">Esta página no existe</p>
+      <p class="sub">El enlace puede estar roto o la página se movió. Volvé al inicio para ver proyectos, diseño UI y contacto.</p>
+
+      <a class="cta mono" href="/porfolio/">
+        <span aria-hidden="true">←</span>
+        <span>Volver al inicio</span>
+      </a>
+    </main>
+
+    <footer class="mono">
+      <span>Juan Moreno Trezza</span>
+      <span>Frontend Developer &amp; UI Designer</span>
+    </footer>
+  </body>
+</html>

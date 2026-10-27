@@ -8,14 +8,10 @@ export const Hero: React.FC = () => {
   return (
     <section className="relative w-full border-b border-[#c4c7c7] px-5 md:px-8 lg:px-12 pt-12 md:pt-16 pb-8 md:pb-12 overflow-hidden bg-[#faf9f5]">
       {/* Top Metadata Bar */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-b border-[#c4c7c7] pb-4 mb-10 md:mb-14 gap-3 text-[11px] font-mono-code uppercase text-[#444748]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-b border-[#c4c7c7] pb-4 mb-10 md:mb-14 gap-3 text-[11px] font-mono-code uppercase text-[#444748]">
         <div className="flex items-center gap-2">
           <span className="w-1.5 h-1.5 bg-[#712ae2] inline-block shrink-0"></span>
           <span>LOC: {PORTFOLIO_INFO.location}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-[#1b1c1a] font-semibold">[STATUS]</span>
-          <span className="text-[#712ae2] font-semibold">{PORTFOLIO_INFO.status}</span>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-[#1b1c1a] font-semibold">[ROLE]</span>
@@ -28,6 +24,19 @@ export const Hero: React.FC = () => {
 
       {/* Monumental Typography */}
       <div className="max-w-6xl my-4 md:my-8">
+        {/* Estado: el halo del punto late solo sin reduced motion */}
+        <p className="inline-flex items-center gap-2.5 border border-[#c4c7c7] bg-[#f5f4ef] px-3 py-1.5 mb-6 md:mb-8 font-mono-code text-[11px] uppercase tracking-wider text-[#1b1c1a]">
+          <span className="relative flex w-2 h-2 shrink-0" aria-hidden="true">
+            <span className="absolute inset-0 rounded-full bg-[#16a34a] motion-safe:animate-statusPulse"></span>
+            <span className="relative w-2 h-2 rounded-full bg-[#16a34a]"></span>
+          </span>
+          {/* Cada parte se mantiene entera: en pantallas angostas la segunda baja completa */}
+          <span className="flex flex-wrap gap-x-1.5">
+            <span className="font-semibold whitespace-nowrap">{PORTFOLIO_INFO.status}</span>{' '}
+            <span className="text-[#444748] whitespace-nowrap">· {PORTFOLIO_INFO.availability}</span>
+          </span>
+        </p>
+
         <h1 ref={titleRef} className="font-syne text-[min(40px,calc((100vw-40px)/11.8))] leading-[min(44px,calc((100vw-40px)/11.8*1.1))] sm:text-[min(58px,calc((100vw-40px)/11.8))] sm:leading-[min(62px,calc((100vw-40px)/11.8*1.069))] md:text-[min(72px,calc((100vw-64px)/11.8))] md:leading-[min(76px,calc((100vw-64px)/11.8*1.056))] lg:text-[min(84px,calc((100vw-96px)/11.8))] lg:leading-[min(88px,calc((100vw-96px)/11.8*1.048))] font-extrabold uppercase tracking-tight text-[#1b1c1a]">
           Diseño y desarrollo interfaces que{' '}
           <em className="font-playfair text-[min(46px,calc((100vw-40px)/11.8*1.15))] sm:text-[min(68px,calc((100vw-40px)/11.8*1.172))] md:text-[min(84px,calc((100vw-64px)/11.8*1.167))] lg:text-[min(98px,calc((100vw-96px)/11.8*1.167))] lowercase font-normal text-[#712ae2] not-italic tracking-normal inline-block transform -rotate-1 hover:rotate-0 transition-transform duration-300">

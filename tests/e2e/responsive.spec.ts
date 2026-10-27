@@ -53,7 +53,7 @@ for (const width of WIDTHS) {
     if (width < 1024) {
       const box = (await button.boundingBox())!;
       expect(box.x >= 0 && box.x + box.width <= width, 'botón del menú a la vista').toBe(true);
-      const drawerLink = page.locator('header a:has-text("04 // STACK")');
+      const drawerLink = page.locator('header a:has-text("05 // STACK")');
       await button.tap();
       await expect(drawerLink).toBeVisible();
       await button.tap();
@@ -63,9 +63,9 @@ for (const width of WIDTHS) {
       await expect(page.locator('header nav a[href="#trabajos"]')).toBeVisible();
     }
 
-    // El estado siempre visible en el hero; en el header, desde 1280px
+    // El estado vive solo en el hero: el header no lo repite en ningún ancho
     await expect(page.locator('main section').first().getByText('DISPONIBLE PARA TRABAJAR', { exact: true })).toBeVisible();
-    await expect(page.locator('header > div').getByText('DISPONIBLE PARA TRABAJAR', { exact: true })).toBeVisible({ visible: width >= 1280 });
+    await expect(page.locator('header > div').getByText('DISPONIBLE PARA TRABAJAR', { exact: true })).toHaveCount(0);
 
     await ctx.close();
   });

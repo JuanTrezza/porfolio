@@ -15,7 +15,7 @@ export const TechStack: React.FC = () => {
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 border-b border-[#c4c7c7] pb-3 gap-2">
         <div>
           <span className="font-mono-code text-[11px] text-[#712ae2] uppercase font-semibold">
-            03 // TOOLKIT & CAPACIDADES
+            04 // TOOLKIT & CAPACIDADES
           </span>
           <h2 ref={titleRef} className="font-syne text-2xl md:text-3xl lg:text-4xl uppercase text-[#1b1c1a] tracking-tight font-bold">
             STACK TECNOLÓGICO

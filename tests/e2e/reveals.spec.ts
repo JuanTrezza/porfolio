@@ -1,12 +1,13 @@
 import { diffPercent, expect, opacities, scrollToSelector, settle, test, wait } from './helpers';
 
-// Entradas escalonadas de destacados, archivo, stack y certificaciones, y parallax de las imágenes destacadas.
+// Entradas escalonadas de destacados, diseño, archivo, stack y certificaciones, y parallax de las imágenes destacadas.
 
 const GROUPS: Record<string, string> = {
   destacados: '#trabajos > div.grid > article > *',
+  diseño: '#diseno > div.grid > article > *',
   archivo: '#archivo .divide-y > *',
   stack: '#stack > div.grid > * > *',
-  certificaciones: 'section:has(span:text-is("04 // VALIDACIÓN")) div.grid > *',
+  certificaciones: 'section:has(span:text-is("05 // VALIDACIÓN")) div.grid > *',
 };
 
 test.beforeEach(async ({ page }) => {
@@ -41,8 +42,8 @@ for (const [name, selector] of Object.entries(GROUPS)) {
   });
 }
 
-test('las cards de destacados y stack nunca se vuelven transparentes (no se ve el gris de la grilla)', async ({ page }) => {
-  const cards = await opacities(page, '#trabajos > div.grid > article, #stack > div.grid > *');
+test('las cards de destacados, diseño y stack nunca se vuelven transparentes (no se ve el gris de la grilla)', async ({ page }) => {
+  const cards = await opacities(page, '#trabajos > div.grid > article, #diseno > div.grid > article, #stack > div.grid > *');
   expect(cards.every((o) => o === 1)).toBe(true);
 });
 
@@ -117,9 +118,10 @@ test('en reposo, cada bloque queda idéntico al diseño', async ({ page, browser
 
   const blocks: [string, string][] = [
     ['destacados', '#trabajos > div.grid > article'],
+    ['diseño', '#diseno > div.grid > article'],
     ['archivo', '#archivo .divide-y'],
     ['stack', '#stack > div.grid'],
-    ['certificaciones', 'section:has(span:text-is("04 // VALIDACIÓN")) div.grid'],
+    ['certificaciones', 'section:has(span:text-is("05 // VALIDACIÓN")) div.grid'],
   ];
   for (const [name, selector] of blocks) {
     const shots: Buffer[] = [];
